@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+*.local
+.idea
+.vscode
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tsconfig.tsbuildinfo

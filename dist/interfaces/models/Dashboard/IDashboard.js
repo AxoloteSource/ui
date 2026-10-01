@@ -1,0 +1,1 @@
+const e=[{key:"today",label:"Hoy"},{key:"7d",label:"Últimos 7 días"},{key:"30d",label:"Últimos 30 días"},{key:"this_month",label:"Este mes"},{key:"custom",label:"Personalizado"}];export{e as DASHBOARD_RANGE_OPTIONS};

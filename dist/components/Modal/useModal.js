@@ -1,0 +1,1 @@
+const u=l=>{const{title:t,children:n,isOpen:o,close:e,className:c="",icon:i=null,closeOnOverlayClick:s=!0}=l;return{title:t,children:n,isOpen:o,className:c,icon:i,closeOnOverlayClick:s,close:e,preventCloseOutside:()=>{s&&e()}}};export{u as useModal};

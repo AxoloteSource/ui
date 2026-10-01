@@ -1,0 +1,1 @@
+import{jsx as t}from"react/jsx-runtime";import{CircleX as o}from"lucide-react";const s=({...e})=>t("button",{...e,type:"button",className:"text-[var(--text)]",children:t(o,{size:22})});export{s as CloseButton};

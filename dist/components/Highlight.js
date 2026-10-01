@@ -1,0 +1,1 @@
+import{jsx as r}from"react/jsx-runtime";import i from"highlight.js";import"highlight.js/styles/monokai-sublime.css";import{useRef as h,useEffect as l}from"react";const n=({children:t})=>{const e=h(null);return l(()=>{e?.current&&i.highlightElement(e.current.querySelector("pre"))},[]),r("div",{ref:e,className:"highlight-el",children:t})};export{n as default};

@@ -1,0 +1,1 @@
+import{jsx as d}from"react/jsx-runtime";const o=r=>d("div",{className:`infobox mb-5 w-full max-w-md justify-center rounded-md border border-gray-500/20 p-6 shadow-md ${r.className}`,children:r.children});export{o as default};

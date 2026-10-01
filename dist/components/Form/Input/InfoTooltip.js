@@ -1,0 +1,1 @@
+import{jsx as o}from"react/jsx-runtime";import{Tooltip as p}from"../../Tooltip/Tooltip.js";import{Info as e}from"lucide-react";const n=({content:r,size:t=13})=>o(p,{content:r,placement:"top",children:o(e,{size:t,className:"flex-shrink-0 cursor-help"})});export{n as InfoTooltip};
