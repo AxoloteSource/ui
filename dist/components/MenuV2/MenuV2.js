@@ -1,1 +1,12 @@
-import{jsx as n}from"react/jsx-runtime";import{useAxoloteUI as f}from"../../contexts/AxoloteUIProvider.js";import{MenuV2Header as l}from"./MenuV2Header.js";import{MenuV2Item as a}from"./MenuV2Item.js";const I=({menu:s,editMode:r=!1,onEdit:t,onDelete:u,onToggleRole:m})=>{const{menu:p}=f(),o=s??p,c=e=>e.type==="header"||(e.children?.length??0)>0?n(l,{item:e,editMode:r,onEdit:t,onDelete:u,onToggleRole:m},e.id):n(a,{item:e,editMode:r,onEdit:t,onDelete:u,onToggleRole:m},e.id);return o?.items?.length?n("ul",{children:o.items.map(c)}):null};export{I as MenuV2,I as default};
+import { jsx as n } from "react/jsx-runtime";
+import { useAxoloteUI as f } from "../../contexts/AxoloteUIProvider.js";
+import { MenuV2Header as l } from "./MenuV2Header.js";
+import { MenuV2Item as a } from "./MenuV2Item.js";
+const I = ({ menu: s, editMode: r = !1, onEdit: t, onDelete: u, onToggleRole: m }) => {
+  const { menu: p } = f(), o = s ?? p, c = (e) => e.type === "header" || (e.children?.length ?? 0) > 0 ? /* @__PURE__ */ n(l, { item: e, editMode: r, onEdit: t, onDelete: u, onToggleRole: m }, e.id) : /* @__PURE__ */ n(a, { item: e, editMode: r, onEdit: t, onDelete: u, onToggleRole: m }, e.id);
+  return o?.items?.length ? /* @__PURE__ */ n("ul", { children: o.items.map(c) }) : null;
+};
+export {
+  I as MenuV2,
+  I as default
+};

@@ -3,6 +3,7 @@ import { ButtonTypeEnum } from '../../Buttons/enums/buttonType.enum'
 import { ModalFilter } from '../../Filters/ModalFilter/ModalFilter'
 import { InputWithIcon } from '../../Form/Input/inputWithIcon'
 import { DataTable } from '../DataTable/DataTable'
+import { IDataTableCustomProps } from '../DataTable/IDataTableCustomProps'
 import { IDataTableFilterProps } from './IDataTableFilterProps'
 import { useDataTableFilter } from './useDataTableFilter'
 import { FormikValues } from 'formik'
@@ -48,7 +49,7 @@ export const DataTableFilter = <Values extends FormikValues>(props: IDataTableFi
           </div>
         )}
       </div>
-      <DataTable datatablePros={dataTableProps} isLoading={isLoading} rowExpansion={rowExpansion} />
+      <DataTable datatablePros={dataTableProps as IDataTableCustomProps['datatablePros']} isLoading={isLoading} rowExpansion={rowExpansion} />
 
       <ModalFilter<Values> close={close} isOpen={isOpen} filters={filters} initialValues={modalInitialValues} onSubmit={onFilter}>
         {(formik) => <>{typeof children === 'function' ? children(formik) : children}</>}

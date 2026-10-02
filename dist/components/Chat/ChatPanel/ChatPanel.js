@@ -1,1 +1,76 @@
-import{jsxs as f,jsx as e}from"react/jsx-runtime";import{Divider as g}from"../../Divider/Divider.js";import{usePerfectScroll as v}from"../../../hooks/usePerfectScroll.js";import{useCallback as $}from"react";import w from"react-perfect-scrollbar";import{ChatUserCard as k}from"./ChatItem/ChatUserCard.js";import{ChatList as R}from"./ChatList/ChatList.js";import{ChatSection as s}from"./ChatSection/ChatSection.js";import{NoChats as Y}from"./NoChats/NoChats.js";import{SearchChats as _}from"./SearchChats/SearchChats.js";const G=({scrollChatListProps:p,showMenu:x=!1,setSelectedChat:o,chatList:t,otherContactsList:r,currentUser:a,setSearchIndex:d,handleToggleMessagesScroll:i,selectUser:c,selectedUser:h})=>{const{hasNextPage:u,isFetchingNextPage:S,fetchNextPage:C}=p,{handleScrollY:N,scrollElRef:P,onYReachStart:b,t:m}=v({hasNextPage:u,isFetchingNextPage:S,fetchNextPage:C}),n=$(l=>{i(),o(l)},[i,o]);return f("div",{className:`panel absolute z-10 hidden h-full w-full max-w-xs flex-none space-y-4 overflow-hidden p-4 sm:h-[calc(100vh_-_150px)] xl:relative xl:block ${x?"!block":""}`,children:[e(k,{title:`${a.name}`,subtitle:`${a.roleName}`}),e(_,{setSearch:d}),e(g,{}),e(w,{containerRef:l=>P.current=l,onScrollY:N,onYReachStart:b,className:"h-full",options:{suppressScrollX:!0,wheelPropagation:!1},children:f(R,{children:[!t.length&&!r.length&&e(Y,{}),t.length>0&&e(s,{title:`${m("chats")}`,iterator:t,setSelectedChat:n,selectUser:c,selectedUser:h}),r.length>0&&e(s,{title:`${m("other_chats")}`,iterator:r,setSelectedChat:n,selectUser:c,selectedUser:h})]})})]})};export{G as ChatPanel};
+import { jsxs as f, jsx as e } from "react/jsx-runtime";
+import { Divider as g } from "../../Divider/Divider.js";
+import { usePerfectScroll as v } from "../../../hooks/usePerfectScroll.js";
+import { useCallback as $ } from "react";
+import w from "react-perfect-scrollbar";
+import { ChatUserCard as k } from "./ChatItem/ChatUserCard.js";
+import { ChatList as R } from "./ChatList/ChatList.js";
+import { ChatSection as s } from "./ChatSection/ChatSection.js";
+import { NoChats as Y } from "./NoChats/NoChats.js";
+import { SearchChats as _ } from "./SearchChats/SearchChats.js";
+const G = ({
+  scrollChatListProps: p,
+  showMenu: x = !1,
+  setSelectedChat: o,
+  chatList: t,
+  otherContactsList: r,
+  currentUser: a,
+  setSearchIndex: d,
+  handleToggleMessagesScroll: i,
+  selectUser: c,
+  selectedUser: h
+}) => {
+  const { hasNextPage: u, isFetchingNextPage: S, fetchNextPage: C } = p, { handleScrollY: N, scrollElRef: P, onYReachStart: b, t: m } = v({ hasNextPage: u, isFetchingNextPage: S, fetchNextPage: C }), n = $(
+    (l) => {
+      i(), o(l);
+    },
+    [i, o]
+  );
+  return /* @__PURE__ */ f(
+    "div",
+    {
+      className: `panel absolute z-10 hidden h-full w-full max-w-xs flex-none space-y-4 overflow-hidden p-4 sm:h-[calc(100vh_-_150px)] xl:relative xl:block ${x ? "!block" : ""}`,
+      children: [
+        /* @__PURE__ */ e(k, { title: `${a.name}`, subtitle: `${a.roleName}` }),
+        /* @__PURE__ */ e(_, { setSearch: d }),
+        /* @__PURE__ */ e(g, {}),
+        /* @__PURE__ */ e(
+          w,
+          {
+            containerRef: (l) => P.current = l,
+            onScrollY: N,
+            onYReachStart: b,
+            className: "h-full",
+            options: { suppressScrollX: !0, wheelPropagation: !1 },
+            children: /* @__PURE__ */ f(R, { children: [
+              !t.length && !r.length && /* @__PURE__ */ e(Y, {}),
+              t.length > 0 && /* @__PURE__ */ e(
+                s,
+                {
+                  title: `${m("chats")}`,
+                  iterator: t,
+                  setSelectedChat: n,
+                  selectUser: c,
+                  selectedUser: h
+                }
+              ),
+              r.length > 0 && /* @__PURE__ */ e(
+                s,
+                {
+                  title: `${m("other_chats")}`,
+                  iterator: r,
+                  setSelectedChat: n,
+                  selectUser: c,
+                  selectedUser: h
+                }
+              )
+            ] })
+          }
+        )
+      ]
+    }
+  );
+};
+export {
+  G as ChatPanel
+};

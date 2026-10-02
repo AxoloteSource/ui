@@ -1,6 +1,13 @@
 import { UseMutateAsyncFunction } from '@tanstack/react-query'
-import { AxiosResponse } from 'axios'
+import { AxiosError, AxiosResponse } from 'axios'
 import { sileo } from 'sileo'
+
+interface SubmitErrorPayload {
+  data?: Record<string, unknown>
+  message?: string
+}
+
+type SubmitError = AxiosError<SubmitErrorPayload>
 
 export const useOnSubmit = <Request = Record<string, unknown>, Response = Record<string, unknown>>({
   mutateAsync,
@@ -15,20 +22,21 @@ export const useOnSubmit = <Request = Record<string, unknown>, Response = Record
 }) => {
   const onSubmit = async (data: Request, { setErrors }: { setErrors: (errors: Record<string, unknown>) => void }) => {
     try {
-      console.log('data', formatData(data))
       const res = await mutateAsync(formatData(data))
-      onSuccess(res.data)
-    } catch (error: unknown) {
-      if (error.response?.data?.data != null) {
-        setErrors(error.response.data.data)
+      onSuccess(res.data as Response)
+    } catch (error) {
+      const submitError = error as SubmitError
+
+      if (submitError.response?.data?.data != null) {
+        setErrors(submitError.response.data.data)
       }
 
       if (onError) {
-        onError(error)
-      } else if (error.response?.data.message != null) {
+        onError(submitError)
+      } else if (submitError.response?.data?.message != null) {
         sileo.error({
           title: 'Error',
-          description: error.response.data.message
+          description: submitError.response.data.message
         })
       }
     }

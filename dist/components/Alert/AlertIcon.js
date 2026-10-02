@@ -1,1 +1,15 @@
-import{jsxs as a,jsx as r}from"react/jsx-runtime";import{AlertTextTypeEnum as m}from"../../enums/types/AlertTextTypeEnum.js";import n from"clsx";import{memo as c}from"react";import{useAlertIcon as p}from"./useAlertIcon.js";const i=({children:e,icon:t,type:s=m.Warning,className:l=""})=>{const o=n("relative flex items-center border p-3.5 rounded ltr:border-l-[64px] rtl:border-r-[64px]",p(s),l);return a("div",{className:o,children:[r("span",{className:"absolute inset-y-0 m-auto h-6 w-6 text-gray-500 ltr:-left-11 rtl:-right-11 dark:text-gray-100",children:t}),r("span",{className:"ltr:pr-2 rtl:pl-2",children:e})]})},h=c(i);export{h as default};
+import { jsxs as a, jsx as r } from "react/jsx-runtime";
+import { AlertTextTypeEnum as m } from "../../enums/types/AlertTextTypeEnum.js";
+import n from "clsx";
+import { memo as c } from "react";
+import { useAlertIcon as p } from "./useAlertIcon.js";
+const i = ({ children: e, icon: t, type: s = m.Warning, className: l = "" }) => {
+  const o = n("relative flex items-center border p-3.5 rounded ltr:border-l-[64px] rtl:border-r-[64px]", p(s), l);
+  return /* @__PURE__ */ a("div", { className: o, children: [
+    /* @__PURE__ */ r("span", { className: "absolute inset-y-0 m-auto h-6 w-6 text-gray-500 ltr:-left-11 rtl:-right-11 dark:text-gray-100", children: t }),
+    /* @__PURE__ */ r("span", { className: "ltr:pr-2 rtl:pl-2", children: e })
+  ] });
+}, h = c(i);
+export {
+  h as default
+};

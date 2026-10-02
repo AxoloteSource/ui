@@ -1,1 +1,35 @@
-import{jsx as a}from"react/jsx-runtime";import s from"../../Checkbox/CheckboxGroup.js";import{useCheckboxGroupForm as g}from"./useCheckboxGroupForm.js";import{WrapInput as b}from"../WrapInput.js";import f from"clsx";function G({name:r,options:d=[],formik:o,label:p,variant:i="default",color:l="primary",className:t,classContainer:u="grid grid-cols-2 gap-2 border-1 rounded-lg border-gray-300 dark:border-gray-600! p-2",direction:m="vertical"}){const{fieldValue:e,showError:n,handleChange:c}=g({formik:o,name:r});return a(b,{label:p,name:r,formik:o,className:t,children:a(s,{options:d,initialValues:e,value:e,onChange:c,variant:i,color:l,direction:m,className:f(n&&"border-danger rounded-md border p-2",u)})})}export{G as CheckboxGroupForm,G as default};
+import { jsx as a } from "react/jsx-runtime";
+import s from "../../Checkbox/CheckboxGroup.js";
+import { useCheckboxGroupForm as g } from "./useCheckboxGroupForm.js";
+import { WrapInput as b } from "../WrapInput.js";
+import f from "clsx";
+function G({
+  name: r,
+  options: d = [],
+  formik: o,
+  label: p,
+  variant: i = "default",
+  color: l = "primary",
+  className: t,
+  classContainer: u = "grid grid-cols-2 gap-2 border-1 rounded-lg border-gray-300 dark:border-gray-600! p-2",
+  direction: m = "vertical"
+}) {
+  const { fieldValue: e, showError: n, handleChange: c } = g({ formik: o, name: r });
+  return /* @__PURE__ */ a(b, { label: p, name: r, formik: o, className: t, children: /* @__PURE__ */ a(
+    s,
+    {
+      options: d,
+      initialValues: e,
+      value: e,
+      onChange: c,
+      variant: i,
+      color: l,
+      direction: m,
+      className: f(n && "border-danger rounded-md border p-2", u)
+    }
+  ) });
+}
+export {
+  G as CheckboxGroupForm,
+  G as default
+};

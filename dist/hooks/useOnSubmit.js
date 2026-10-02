@@ -1,1 +1,23 @@
-import{sileo as l}from"sileo";const d=({mutateAsync:r,onSuccess:n,formatData:s=a=>a,onError:t})=>({onSubmit:async(o,{setErrors:i})=>{try{console.log("data",s(o));const e=await r(s(o));n(e.data)}catch(e){e.response?.data?.data!=null&&i(e.response.data.data),t?t(e):e.response?.data.message!=null&&l.error({title:"Error",description:e.response.data.message})}}});export{d as useOnSubmit};
+import { sileo as d } from "sileo";
+const u = ({
+  mutateAsync: a,
+  onSuccess: o,
+  formatData: n = (r) => r,
+  onError: s
+}) => ({
+  onSubmit: async (i, { setErrors: c }) => {
+    try {
+      const e = await a(n(i));
+      o(e.data);
+    } catch (e) {
+      const t = e;
+      t.response?.data?.data != null && c(t.response.data.data), s ? s(t) : t.response?.data?.message != null && d.error({
+        title: "Error",
+        description: t.response.data.message
+      });
+    }
+  }
+});
+export {
+  u as useOnSubmit
+};

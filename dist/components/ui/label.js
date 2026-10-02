@@ -1,1 +1,22 @@
-import{jsx as t}from"react/jsx-runtime";import*as a from"@radix-ui/react-label";import{cn as r}from"../../lib/utils.js";function d({className:e,...o}){return t(a.Root,{"data-slot":"label",className:r("text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",e),...o})}export{d as Label};
+import { jsx as t } from "react/jsx-runtime";
+import * as a from "@radix-ui/react-label";
+import { cn as r } from "../../lib/utils.js";
+function d({
+  className: e,
+  ...o
+}) {
+  return /* @__PURE__ */ t(
+    a.Root,
+    {
+      "data-slot": "label",
+      className: r(
+        "text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+        e
+      ),
+      ...o
+    }
+  );
+}
+export {
+  d as Label
+};

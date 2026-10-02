@@ -1,1 +1,40 @@
-import l from"clsx";const i=({variant:a="primary",type:n="solid",shape:r="default",className:t=""})=>({getBadgeClasses:()=>{const d="badge";let e="";if(n==="solid")switch(a){case"primary":e="btn-primary";break;case"secondary":e="btn-secondary";break;case"success":e="btn-success";break;case"danger":e="btn-danger";break;case"warning":e="btn-warning";break;case"info":e="btn-info";break;case"dark":e="btn-dark";break;default:e="btn-primary"}else e=`badge-outline-${a}`;let s="";return r==="pill"?s="rounded-full":r==="square"&&(s="rounded-none"),l(d,e,s,t)}});export{i as useBadge};
+import l from "clsx";
+const i = ({ variant: a = "primary", type: n = "solid", shape: r = "default", className: t = "" }) => ({
+  getBadgeClasses: () => {
+    const d = "badge";
+    let e = "";
+    if (n === "solid")
+      switch (a) {
+        case "primary":
+          e = "btn-primary";
+          break;
+        case "secondary":
+          e = "btn-secondary";
+          break;
+        case "success":
+          e = "btn-success";
+          break;
+        case "danger":
+          e = "btn-danger";
+          break;
+        case "warning":
+          e = "btn-warning";
+          break;
+        case "info":
+          e = "btn-info";
+          break;
+        case "dark":
+          e = "btn-dark";
+          break;
+        default:
+          e = "btn-primary";
+      }
+    else
+      e = `badge-outline-${a}`;
+    let s = "";
+    return r === "pill" ? s = "rounded-full" : r === "square" && (s = "rounded-none"), l(d, e, s, t);
+  }
+});
+export {
+  i as useBadge
+};

@@ -1,1 +1,24 @@
-import{useMemo as c}from"react";const f=({name:l,formik:t,options:u=[],isMulti:s=!1,onChange:r})=>({selectedValue:c(()=>{const e=t.values[l];return e==null||Array.isArray(e)&&e.length===0?s?[]:null:s&&Array.isArray(e)?u.filter(a=>e.includes(a.value)):u.find(a=>a.value===e)||null},[t,l,u,s]),handleOnChange:async e=>{if(s){const n=e.map(a=>a.value);await t.setFieldValue(l,n)}else e?await t.setFieldValue(l,e?.value):await t.setFieldValue(l,null);r&&r(e)}});export{f as useInputSelect};
+import { useMemo as c } from "react";
+const f = ({
+  name: l,
+  formik: t,
+  options: u = [],
+  isMulti: s = !1,
+  onChange: r
+}) => ({
+  selectedValue: c(() => {
+    const e = t.values[l];
+    return e == null || Array.isArray(e) && e.length === 0 ? s ? [] : null : s && Array.isArray(e) ? u.filter((a) => e.includes(a.value)) : u.find((a) => a.value === e) || null;
+  }, [t, l, u, s]),
+  handleOnChange: async (e) => {
+    if (s) {
+      const n = e.map((a) => a.value);
+      await t.setFieldValue(l, n);
+    } else
+      e ? await t.setFieldValue(l, e?.value) : await t.setFieldValue(l, null);
+    r && r(e);
+  }
+});
+export {
+  f as useInputSelect
+};

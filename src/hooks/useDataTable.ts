@@ -91,7 +91,7 @@ export const useDataTable = ({ service, payload = {}, renderersMap = {}, dataTab
     totalRecords: data?.total || 0,
     onPageChange: setPage,
     records: data?.data || [],
-    columns: data?.columns ? applyRenderers(data.columns) : [],
+    columns: data?.columns ? applyRenderers(data.columns as DataTableColumn<Record<string, unknown>>[]) : [],
     sortStatus,
     onSortStatusChange,
     onRecordsPerPageChange: setLimit,

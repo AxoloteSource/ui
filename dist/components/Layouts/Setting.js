@@ -1,1 +1,328 @@
-import{jsxs as t,jsx as e}from"react/jsx-runtime";import{useAxoloteUI as o}from"../../contexts/AxoloteUIProvider.js";import{useState as d}from"react";const m=()=>{const{themeConfig:r,setThemeConfig:a}=o(),[n,l]=d(!1);return t("div",{children:[e("div",{className:`${n&&"!block"||""} fixed inset-0 z-[51] hidden bg-[black]/60 px-4 transition-[display]`,onClick:()=>l(!1)}),e("nav",{className:`${n&&"ltr:!right-0 rtl:!left-0"||""} fixed top-0 bottom-0 z-[51] w-full max-w-[400px] bg-white p-4 shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 ltr:-right-[400px] rtl:-left-[400px] dark:bg-black`,children:t("div",{className:"perfect-scrollbar h-full overflow-x-hidden overflow-y-auto",children:[t("div",{className:"relative pb-5 text-center",children:[e("button",{type:"button",className:"absolute top-0 opacity-30 hover:opacity-100 ltr:right-0 rtl:left-0 dark:text-white",onClick:()=>l(!1),children:t("svg",{xmlns:"http://www.w3.org/2000/svg",width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round",children:[e("line",{x1:"18",y1:"6",x2:"6",y2:"18"}),e("line",{x1:"6",y1:"6",x2:"18",y2:"18"})]})}),e("h4",{className:"mb-1 dark:text-white",children:"TEMPLATE CUSTOMIZER"}),e("p",{className:"text-white-dark",children:"Set preferences that will be cookied for your live preview demonstration."})]}),t("div",{className:"border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]",children:[e("h5",{className:"mb-1 text-base leading-none dark:text-white",children:"Color Scheme"}),e("p",{className:"text-white-dark text-xs",children:"Overall light or dark presentation."}),t("div",{className:"mt-3 grid grid-cols-3 gap-2",children:[t("button",{type:"button",className:`${r.theme==="light"?"btn-primary":"btn-outline-primary"} btn`,onClick:()=>a({theme:"light"}),children:[t("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",className:"h-5 w-5 shrink-0 ltr:mr-2 rtl:ml-2",children:[e("circle",{cx:"12",cy:"12",r:"5",stroke:"currentColor",strokeWidth:"1.5"}),e("path",{d:"M12 2V4",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{d:"M12 20V22",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{d:"M4 12L2 12",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{d:"M22 12L20 12",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{opacity:"0.5",d:"M19.7778 4.22266L17.5558 6.25424",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{opacity:"0.5",d:"M4.22217 4.22266L6.44418 6.25424",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{opacity:"0.5",d:"M6.44434 17.5557L4.22211 19.7779",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{opacity:"0.5",d:"M19.7778 19.7773L17.5558 17.5551",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"})]}),"Light"]}),t("button",{type:"button",className:`${r.theme==="dark"?"btn-primary":"btn-outline-primary"} btn`,onClick:()=>a({theme:"dark"}),children:[e("svg",{width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",className:"h-5 w-5 shrink-0 ltr:mr-2 rtl:ml-2",children:e("path",{d:"M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM21.25 12C21.25 17.1086 17.1086 21.25 12 21.25V22.75C17.9371 22.75 22.75 17.9371 22.75 12H21.25ZM12 21.25C6.89137 21.25 2.75 17.1086 2.75 12H1.25C1.25 17.9371 6.06294 22.75 12 22.75V21.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447Z",fill:"currentColor"})}),"Dark"]}),t("button",{type:"button",className:`${r.theme==="system"?"btn-primary":"btn-outline-primary"} btn`,onClick:()=>a({theme:"system"}),children:[t("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",className:"h-5 w-5 shrink-0 ltr:mr-2 rtl:ml-2",children:[e("path",{opacity:"0.5",d:"M7.142 18.9706C5.18539 18.8995 3.99998 18.6568 3.17157 17.8284C2 16.6569 2 14.7712 2 11C2 7.22876 2 5.34315 3.17157 4.17157C4.34315 3 6.22876 3 10 3H14C17.7712 3 19.6569 3 20.8284 4.17157C22 5.34315 22 7.22876 22 11C22 14.7712 22 16.6569 20.8284 17.8284C20.0203 18.6366 18.8723 18.8873 17 18.965",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round"}),e("path",{d:"M9.94955 16.0503C10.8806 15.1192 11.3461 14.6537 11.9209 14.6234C11.9735 14.6206 12.0261 14.6206 12.0787 14.6234C12.6535 14.6537 13.119 15.1192 14.0501 16.0503C16.0759 18.0761 17.0888 19.089 16.8053 19.963C16.7809 20.0381 16.7506 20.1112 16.7147 20.1815C16.2973 21 14.8648 21 11.9998 21C9.13482 21 7.70233 21 7.28489 20.1815C7.249 20.1112 7.21873 20.0381 7.19436 19.963C6.91078 19.089 7.92371 18.0761 9.94955 16.0503Z",stroke:"currentColor",strokeWidth:"1.5"})]}),"System"]})]})]}),t("div",{className:"border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]",children:[e("h5",{className:"mb-1 text-base leading-none dark:text-white",children:"Navigation Position"}),e("p",{className:"text-white-dark text-xs",children:"Select the primary navigation paradigm for your app."}),t("div",{className:"mt-3 grid grid-cols-3 gap-2",children:[e("button",{type:"button",className:`${r.menu==="horizontal"?"btn-primary":"btn-outline-primary"} btn`,onClick:()=>a({menu:"horizontal"}),children:"Horizontal"}),e("button",{type:"button",className:`${r.menu==="vertical"?"btn-primary":"btn-outline-primary"} btn`,onClick:()=>a({menu:"vertical"}),children:"Vertical"}),e("button",{type:"button",className:`${r.menu==="collapsible-vertical"?"btn-primary":"btn-outline-primary"} btn`,onClick:()=>a({menu:"collapsible-vertical"}),children:"Collapsible"})]}),e("div",{className:"text-primary mt-5",children:t("label",{className:"mb-0 inline-flex",children:[e("input",{type:"checkbox",className:"form-checkbox",checked:r.semidark===!0||r.semidark==="true",onChange:i=>a({semidark:i.target.checked})}),e("span",{children:"Semi Dark (Sidebar & Header)"})]})})]}),t("div",{className:"border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]",children:[e("h5",{className:"mb-1 text-base leading-none dark:text-white",children:"Layout Style"}),e("p",{className:"text-white-dark text-xs",children:"Select the primary layout style for your app."}),t("div",{className:"mt-3 flex gap-2",children:[e("button",{type:"button",className:`${r.layout==="boxed-layout"?"btn-primary":"btn-outline-primary"} btn flex-auto`,onClick:()=>a({layout:"boxed-layout"}),children:"Box"}),e("button",{type:"button",className:`${r.layout==="full"?"btn-primary":"btn-outline-primary"} btn flex-auto`,onClick:()=>a({layout:"full"}),children:"Full"})]})]}),t("div",{className:"border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]",children:[e("h5",{className:"mb-1 text-base leading-none dark:text-white",children:"Direction"}),e("p",{className:"text-white-dark text-xs",children:"Select the direction for your app."}),t("div",{className:"mt-3 flex gap-2",children:[e("button",{type:"button",className:`${r.rtlClass==="ltr"?"btn-primary":"btn-outline-primary"} btn flex-auto`,onClick:()=>a({rtlClass:"ltr"}),children:"LTR"}),e("button",{type:"button",className:`${r.rtlClass==="rtl"?"btn-primary":"btn-outline-primary"} btn flex-auto`,onClick:()=>a({rtlClass:"rtl"}),children:"RTL"})]})]}),t("div",{className:"border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]",children:[e("h5",{className:"mb-1 text-base leading-none dark:text-white",children:"Navbar Type"}),e("p",{className:"text-white-dark text-xs",children:"Sticky or Floating."}),t("div",{className:"text-primary mt-3 flex items-center gap-3",children:[t("label",{className:"mb-0 inline-flex",children:[e("input",{type:"radio",checked:r.navbar==="navbar-sticky",value:"navbar-sticky",className:"form-radio",onChange:()=>a({navbar:"navbar-sticky"})}),e("span",{children:"Sticky"})]}),t("label",{className:"mb-0 inline-flex",children:[e("input",{type:"radio",checked:r.navbar==="navbar-floating",value:"navbar-floating",className:"form-radio",onChange:()=>a({navbar:"navbar-floating"})}),e("span",{children:"Floating"})]}),t("label",{className:"mb-0 inline-flex",children:[e("input",{type:"radio",checked:r.navbar==="navbar-static",value:"navbar-static",className:"form-radio",onChange:()=>a({navbar:"navbar-static"})}),e("span",{children:"Static"})]})]})]}),t("div",{className:"border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]",children:[e("h5",{className:"mb-1 text-base leading-none dark:text-white",children:"Router Transition"}),e("p",{className:"text-white-dark text-xs",children:"Animation of main content."}),e("div",{className:"mt-3",children:t("select",{className:"form-select border-primary text-primary",value:r.animation,onChange:i=>a({animation:i.target.value}),children:[e("option",{value:" ",children:"None"}),e("option",{value:"animate__fadeIn",children:"Fade"}),e("option",{value:"animate__fadeInDown",children:"Fade Down"}),e("option",{value:"animate__fadeInUp",children:"Fade Up"}),e("option",{value:"animate__fadeInLeft",children:"Fade Left"}),e("option",{value:"animate__fadeInRight",children:"Fade Right"}),e("option",{value:"animate__slideInDown",children:"Slide Down"}),e("option",{value:"animate__slideInLeft",children:"Slide Left"}),e("option",{value:"animate__slideInRight",children:"Slide Right"}),e("option",{value:"animate__zoomIn",children:"Zoom In"})]})})]})]})})]})};export{m as default};
+import { jsxs as t, jsx as e } from "react/jsx-runtime";
+import { useAxoloteUI as o } from "../../contexts/AxoloteUIProvider.js";
+import { useState as d } from "react";
+const m = () => {
+  const { themeConfig: r, setThemeConfig: a } = o(), [n, l] = d(!1);
+  return /* @__PURE__ */ t("div", { children: [
+    /* @__PURE__ */ e(
+      "div",
+      {
+        className: `${n && "!block" || ""} fixed inset-0 z-[51] hidden bg-[black]/60 px-4 transition-[display]`,
+        onClick: () => l(!1)
+      }
+    ),
+    /* @__PURE__ */ e(
+      "nav",
+      {
+        className: `${n && "ltr:!right-0 rtl:!left-0" || ""} fixed top-0 bottom-0 z-[51] w-full max-w-[400px] bg-white p-4 shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 ltr:-right-[400px] rtl:-left-[400px] dark:bg-black`,
+        children: /* @__PURE__ */ t("div", { className: "perfect-scrollbar h-full overflow-x-hidden overflow-y-auto", children: [
+          /* @__PURE__ */ t("div", { className: "relative pb-5 text-center", children: [
+            /* @__PURE__ */ e(
+              "button",
+              {
+                type: "button",
+                className: "absolute top-0 opacity-30 hover:opacity-100 ltr:right-0 rtl:left-0 dark:text-white",
+                onClick: () => l(!1),
+                children: /* @__PURE__ */ t(
+                  "svg",
+                  {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: "20",
+                    height: "20",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "1.5",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [
+                      /* @__PURE__ */ e("line", { x1: "18", y1: "6", x2: "6", y2: "18" }),
+                      /* @__PURE__ */ e("line", { x1: "6", y1: "6", x2: "18", y2: "18" })
+                    ]
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ e("h4", { className: "mb-1 dark:text-white", children: "TEMPLATE CUSTOMIZER" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark", children: "Set preferences that will be cookied for your live preview demonstration." })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]", children: [
+            /* @__PURE__ */ e("h5", { className: "mb-1 text-base leading-none dark:text-white", children: "Color Scheme" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark text-xs", children: "Overall light or dark presentation." }),
+            /* @__PURE__ */ t("div", { className: "mt-3 grid grid-cols-3 gap-2", children: [
+              /* @__PURE__ */ t(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.theme === "light" ? "btn-primary" : "btn-outline-primary"} btn`,
+                  onClick: () => a({ theme: "light" }),
+                  children: [
+                    /* @__PURE__ */ t(
+                      "svg",
+                      {
+                        width: "20",
+                        height: "20",
+                        viewBox: "0 0 24 24",
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        className: "h-5 w-5 shrink-0 ltr:mr-2 rtl:ml-2",
+                        children: [
+                          /* @__PURE__ */ e("circle", { cx: "12", cy: "12", r: "5", stroke: "currentColor", strokeWidth: "1.5" }),
+                          /* @__PURE__ */ e("path", { d: "M12 2V4", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { d: "M12 20V22", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { d: "M4 12L2 12", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { d: "M22 12L20 12", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { opacity: "0.5", d: "M19.7778 4.22266L17.5558 6.25424", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { opacity: "0.5", d: "M4.22217 4.22266L6.44418 6.25424", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { opacity: "0.5", d: "M6.44434 17.5557L4.22211 19.7779", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" }),
+                          /* @__PURE__ */ e("path", { opacity: "0.5", d: "M19.7778 19.7773L17.5558 17.5551", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round" })
+                        ]
+                      }
+                    ),
+                    "Light"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ t(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.theme === "dark" ? "btn-primary" : "btn-outline-primary"} btn`,
+                  onClick: () => a({ theme: "dark" }),
+                  children: [
+                    /* @__PURE__ */ e(
+                      "svg",
+                      {
+                        width: "20",
+                        height: "20",
+                        viewBox: "0 0 24 24",
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        className: "h-5 w-5 shrink-0 ltr:mr-2 rtl:ml-2",
+                        children: /* @__PURE__ */ e(
+                          "path",
+                          {
+                            d: "M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM21.25 12C21.25 17.1086 17.1086 21.25 12 21.25V22.75C17.9371 22.75 22.75 17.9371 22.75 12H21.25ZM12 21.25C6.89137 21.25 2.75 17.1086 2.75 12H1.25C1.25 17.9371 6.06294 22.75 12 22.75V21.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447Z",
+                            fill: "currentColor"
+                          }
+                        )
+                      }
+                    ),
+                    "Dark"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ t(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.theme === "system" ? "btn-primary" : "btn-outline-primary"} btn`,
+                  onClick: () => a({ theme: "system" }),
+                  children: [
+                    /* @__PURE__ */ t(
+                      "svg",
+                      {
+                        width: "24",
+                        height: "24",
+                        viewBox: "0 0 24 24",
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        className: "h-5 w-5 shrink-0 ltr:mr-2 rtl:ml-2",
+                        children: [
+                          /* @__PURE__ */ e(
+                            "path",
+                            {
+                              opacity: "0.5",
+                              d: "M7.142 18.9706C5.18539 18.8995 3.99998 18.6568 3.17157 17.8284C2 16.6569 2 14.7712 2 11C2 7.22876 2 5.34315 3.17157 4.17157C4.34315 3 6.22876 3 10 3H14C17.7712 3 19.6569 3 20.8284 4.17157C22 5.34315 22 7.22876 22 11C22 14.7712 22 16.6569 20.8284 17.8284C20.0203 18.6366 18.8723 18.8873 17 18.965",
+                              stroke: "currentColor",
+                              strokeWidth: "1.5",
+                              strokeLinecap: "round"
+                            }
+                          ),
+                          /* @__PURE__ */ e(
+                            "path",
+                            {
+                              d: "M9.94955 16.0503C10.8806 15.1192 11.3461 14.6537 11.9209 14.6234C11.9735 14.6206 12.0261 14.6206 12.0787 14.6234C12.6535 14.6537 13.119 15.1192 14.0501 16.0503C16.0759 18.0761 17.0888 19.089 16.8053 19.963C16.7809 20.0381 16.7506 20.1112 16.7147 20.1815C16.2973 21 14.8648 21 11.9998 21C9.13482 21 7.70233 21 7.28489 20.1815C7.249 20.1112 7.21873 20.0381 7.19436 19.963C6.91078 19.089 7.92371 18.0761 9.94955 16.0503Z",
+                              stroke: "currentColor",
+                              strokeWidth: "1.5"
+                            }
+                          )
+                        ]
+                      }
+                    ),
+                    "System"
+                  ]
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]", children: [
+            /* @__PURE__ */ e("h5", { className: "mb-1 text-base leading-none dark:text-white", children: "Navigation Position" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark text-xs", children: "Select the primary navigation paradigm for your app." }),
+            /* @__PURE__ */ t("div", { className: "mt-3 grid grid-cols-3 gap-2", children: [
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.menu === "horizontal" ? "btn-primary" : "btn-outline-primary"} btn`,
+                  onClick: () => a({ menu: "horizontal" }),
+                  children: "Horizontal"
+                }
+              ),
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.menu === "vertical" ? "btn-primary" : "btn-outline-primary"} btn`,
+                  onClick: () => a({ menu: "vertical" }),
+                  children: "Vertical"
+                }
+              ),
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.menu === "collapsible-vertical" ? "btn-primary" : "btn-outline-primary"} btn`,
+                  onClick: () => a({ menu: "collapsible-vertical" }),
+                  children: "Collapsible"
+                }
+              )
+            ] }),
+            /* @__PURE__ */ e("div", { className: "text-primary mt-5", children: /* @__PURE__ */ t("label", { className: "mb-0 inline-flex", children: [
+              /* @__PURE__ */ e(
+                "input",
+                {
+                  type: "checkbox",
+                  className: "form-checkbox",
+                  checked: r.semidark === !0 || r.semidark === "true",
+                  onChange: (i) => a({ semidark: i.target.checked })
+                }
+              ),
+              /* @__PURE__ */ e("span", { children: "Semi Dark (Sidebar & Header)" })
+            ] }) })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]", children: [
+            /* @__PURE__ */ e("h5", { className: "mb-1 text-base leading-none dark:text-white", children: "Layout Style" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark text-xs", children: "Select the primary layout style for your app." }),
+            /* @__PURE__ */ t("div", { className: "mt-3 flex gap-2", children: [
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.layout === "boxed-layout" ? "btn-primary" : "btn-outline-primary"} btn flex-auto`,
+                  onClick: () => a({ layout: "boxed-layout" }),
+                  children: "Box"
+                }
+              ),
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.layout === "full" ? "btn-primary" : "btn-outline-primary"} btn flex-auto`,
+                  onClick: () => a({ layout: "full" }),
+                  children: "Full"
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]", children: [
+            /* @__PURE__ */ e("h5", { className: "mb-1 text-base leading-none dark:text-white", children: "Direction" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark text-xs", children: "Select the direction for your app." }),
+            /* @__PURE__ */ t("div", { className: "mt-3 flex gap-2", children: [
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.rtlClass === "ltr" ? "btn-primary" : "btn-outline-primary"} btn flex-auto`,
+                  onClick: () => a({ rtlClass: "ltr" }),
+                  children: "LTR"
+                }
+              ),
+              /* @__PURE__ */ e(
+                "button",
+                {
+                  type: "button",
+                  className: `${r.rtlClass === "rtl" ? "btn-primary" : "btn-outline-primary"} btn flex-auto`,
+                  onClick: () => a({ rtlClass: "rtl" }),
+                  children: "RTL"
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]", children: [
+            /* @__PURE__ */ e("h5", { className: "mb-1 text-base leading-none dark:text-white", children: "Navbar Type" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark text-xs", children: "Sticky or Floating." }),
+            /* @__PURE__ */ t("div", { className: "text-primary mt-3 flex items-center gap-3", children: [
+              /* @__PURE__ */ t("label", { className: "mb-0 inline-flex", children: [
+                /* @__PURE__ */ e(
+                  "input",
+                  {
+                    type: "radio",
+                    checked: r.navbar === "navbar-sticky",
+                    value: "navbar-sticky",
+                    className: "form-radio",
+                    onChange: () => a({ navbar: "navbar-sticky" })
+                  }
+                ),
+                /* @__PURE__ */ e("span", { children: "Sticky" })
+              ] }),
+              /* @__PURE__ */ t("label", { className: "mb-0 inline-flex", children: [
+                /* @__PURE__ */ e(
+                  "input",
+                  {
+                    type: "radio",
+                    checked: r.navbar === "navbar-floating",
+                    value: "navbar-floating",
+                    className: "form-radio",
+                    onChange: () => a({ navbar: "navbar-floating" })
+                  }
+                ),
+                /* @__PURE__ */ e("span", { children: "Floating" })
+              ] }),
+              /* @__PURE__ */ t("label", { className: "mb-0 inline-flex", children: [
+                /* @__PURE__ */ e(
+                  "input",
+                  {
+                    type: "radio",
+                    checked: r.navbar === "navbar-static",
+                    value: "navbar-static",
+                    className: "form-radio",
+                    onChange: () => a({ navbar: "navbar-static" })
+                  }
+                ),
+                /* @__PURE__ */ e("span", { children: "Static" })
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "border-white-light mb-3 rounded-md border border-dashed p-3 dark:border-[#1b2e4b]", children: [
+            /* @__PURE__ */ e("h5", { className: "mb-1 text-base leading-none dark:text-white", children: "Router Transition" }),
+            /* @__PURE__ */ e("p", { className: "text-white-dark text-xs", children: "Animation of main content." }),
+            /* @__PURE__ */ e("div", { className: "mt-3", children: /* @__PURE__ */ t(
+              "select",
+              {
+                className: "form-select border-primary text-primary",
+                value: r.animation,
+                onChange: (i) => a({ animation: i.target.value }),
+                children: [
+                  /* @__PURE__ */ e("option", { value: " ", children: "None" }),
+                  /* @__PURE__ */ e("option", { value: "animate__fadeIn", children: "Fade" }),
+                  /* @__PURE__ */ e("option", { value: "animate__fadeInDown", children: "Fade Down" }),
+                  /* @__PURE__ */ e("option", { value: "animate__fadeInUp", children: "Fade Up" }),
+                  /* @__PURE__ */ e("option", { value: "animate__fadeInLeft", children: "Fade Left" }),
+                  /* @__PURE__ */ e("option", { value: "animate__fadeInRight", children: "Fade Right" }),
+                  /* @__PURE__ */ e("option", { value: "animate__slideInDown", children: "Slide Down" }),
+                  /* @__PURE__ */ e("option", { value: "animate__slideInLeft", children: "Slide Left" }),
+                  /* @__PURE__ */ e("option", { value: "animate__slideInRight", children: "Slide Right" }),
+                  /* @__PURE__ */ e("option", { value: "animate__zoomIn", children: "Zoom In" })
+                ]
+              }
+            ) })
+          ] })
+        ] })
+      }
+    )
+  ] });
+};
+export {
+  m as default
+};

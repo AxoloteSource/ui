@@ -1,11 +1,12 @@
 import { forwardRef, useEffect, useImperativeHandle, useState } from 'react'
 import { usePopper } from 'react-popper'
 
+import type { Placement } from '@popperjs/core'
 import type { ReactNode, Ref } from 'react'
 
 interface DropdownOldProps {
-  placement?: string
-  offset?: number[]
+  placement?: Placement
+  offset?: [number, number]
   btnClassName?: string
   button: ReactNode
   children: ReactNode
@@ -17,12 +18,12 @@ const DropdownOld = (props: DropdownOldProps, forwardedRef: Ref<{ close: () => v
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null)
 
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: props.placement || 'bottom-end',
+    placement: props.placement ?? 'bottom-end',
     modifiers: [
       {
         name: 'offset',
         options: {
-          offset: props.offset || [0]
+          offset: props.offset ?? [0, 0]
         }
       }
     ]

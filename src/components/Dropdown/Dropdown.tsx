@@ -3,7 +3,7 @@ import { DropdownVariantEnum } from './DropdownVariantEnum'
 import { IDropdownProps } from './IDropdownProps'
 import { useDropdown } from './useDropdown'
 
-const Dropdown = (props: IDropdownProps, forwardedRef: Ref<HTMLDivElement>) => {
+const Dropdown = (props: IDropdownProps, forwardedRef: Ref<{ close: () => void }>) => {
   const { variant = DropdownVariantEnum.Outline, color = 'primary', children, className = undefined, title } = props
 
   const { setReferenceElement, setVisibility, visibility, setPopperElement, styles, attributes, customClass } = useDropdown({

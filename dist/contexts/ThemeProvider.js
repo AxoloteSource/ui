@@ -1,1 +1,35 @@
-import{jsx as a}from"react/jsx-runtime";import{createContext as d,useState as h,useEffect as u,useContext as l}from"react";const f={theme:"system",setTheme:()=>null},r=d(f);function w({children:t,defaultTheme:m="system",storageKey:o="theme"}){const[s,n]=h(()=>localStorage.getItem(o)||m);u(()=>{const e=window.document.documentElement;if(e.classList.remove("light","dark"),s==="system"){const c=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";e.classList.add(c);return}e.classList.add(s)},[s]);const i={theme:s,setTheme:e=>{localStorage.setItem(o,e),n(e)}};return a(r.Provider,{value:i,children:t})}function x(){const t=l(r);if(t===void 0)throw new Error("useTheme must be used within a ThemeProvider");return t}export{w as ThemeProvider,x as useTheme};
+import { jsx as a } from "react/jsx-runtime";
+import { createContext as d, useState as h, useEffect as u, useContext as l } from "react";
+const f = {
+  theme: "system",
+  setTheme: () => null
+}, r = d(f);
+function w({ children: t, defaultTheme: m = "system", storageKey: o = "theme" }) {
+  const [s, n] = h(() => localStorage.getItem(o) || m);
+  u(() => {
+    const e = window.document.documentElement;
+    if (e.classList.remove("light", "dark"), s === "system") {
+      const c = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      e.classList.add(c);
+      return;
+    }
+    e.classList.add(s);
+  }, [s]);
+  const i = {
+    theme: s,
+    setTheme: (e) => {
+      localStorage.setItem(o, e), n(e);
+    }
+  };
+  return /* @__PURE__ */ a(r.Provider, { value: i, children: t });
+}
+function x() {
+  const t = l(r);
+  if (t === void 0)
+    throw new Error("useTheme must be used within a ThemeProvider");
+  return t;
+}
+export {
+  w as ThemeProvider,
+  x as useTheme
+};

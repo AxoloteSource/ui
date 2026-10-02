@@ -1,1 +1,40 @@
-import{addDays as n}from"date-fns";import*as d from"react";const v=({name:r,formik:e,allowEmpty:c=!1,initialValues:o})=>{const[s,f]=d.useState(()=>{const t=e.values[r];return t&&t.from?{from:new Date(t.from),to:t.to?new Date(t.to):void 0}:o&&o.from?{from:new Date(o.from),to:o.to?new Date(o.to):void 0}:c?void 0:{from:new Date,to:n(new Date,7)}});return d.useEffect(()=>{const t=e.values[r];t==null&&f(o)},[e.values,r,e,o]),{date:s,handleSelect:t=>{f(t),e.setFieldValue(r,t?{from:t.from?.toISOString(),to:t.to?.toISOString()}:void 0)}}};export{v as useDatepickerWithRange};
+import { addDays as n } from "date-fns";
+import * as d from "react";
+const v = ({
+  name: r,
+  formik: e,
+  allowEmpty: c = !1,
+  initialValues: o
+}) => {
+  const [s, f] = d.useState(() => {
+    const t = e.values[r];
+    return t && t.from ? {
+      from: new Date(t.from),
+      to: t.to ? new Date(t.to) : void 0
+    } : o && o.from ? {
+      from: new Date(o.from),
+      to: o.to ? new Date(o.to) : void 0
+    } : c ? void 0 : {
+      from: /* @__PURE__ */ new Date(),
+      to: n(/* @__PURE__ */ new Date(), 7)
+    };
+  });
+  return d.useEffect(() => {
+    const t = e.values[r];
+    t == null && f(o);
+  }, [e.values, r, e, o]), {
+    date: s,
+    handleSelect: (t) => {
+      f(t), e.setFieldValue(
+        r,
+        t ? {
+          from: t.from?.toISOString(),
+          to: t.to?.toISOString()
+        } : void 0
+      );
+    }
+  };
+};
+export {
+  v as useDatepickerWithRange
+};

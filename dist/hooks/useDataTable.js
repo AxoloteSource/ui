@@ -1,1 +1,65 @@
-import{useState as m,useCallback as S,useEffect as w}from"react";const u=n=>new URLSearchParams(window.location.search).get(n),s=(n,g)=>{const c=new URL(window.location.href);c.searchParams.set(n,g),window.history.replaceState({},"",c.toString())},x=["actions"],$=({service:n,payload:g={},renderersMap:c={},dataTableProps:p})=>{const f=parseInt(u("page")||"1",10),L=parseInt(u("limit")||"10",10),R={columnAccessor:u("order_by")||"id",direction:u("order")||"asc"},[i,T]=m(f),P=[10,20,30,50,100],[l,_]=m(L),[e,y]=m(R),{data:o,isLoading:C,refetch:N}=n({page:i,limit:l,...g,order_by:e.columnAccessor,order:e.direction}),r=S(t=>{T(t),s("page",t.toString())},[]),h=S(t=>{_(t),s("limit",t.toString()),r(1)},[r]);w(()=>{s("page",i.toString()),s("limit",l.toString())},[i,l]),w(()=>{s("order_by",String(e.columnAccessor)),s("order",e.direction)},[e]);const O=S(t=>{y(t),r(1)},[r]),U=t=>t.map(d=>{const a=d.accessor;return{...d,sortable:d.sortable??!x.includes(a),...a&&c[a]?{render:c[a]}:{}}}),b={page:i,recordsPerPage:o?.per_page??l,totalRecords:o?.total||0,onPageChange:r,records:o?.data||[],columns:o?.columns?U(o.columns):[],sortStatus:e,onSortStatusChange:O,onRecordsPerPageChange:h,recordsPerPageOptions:P,noRecordsText:"No se encontraron resultados que coincidan con tu búsqueda",highlightOnHover:!0,className:"whitespace-nowrap table-hover",minHeight:200,paginationText:({from:t,to:d,totalRecords:a})=>`Mostrando del ${t} al ${d} de ${a} registros`},A=p?p(b):b;return{page:i,setPage:r,limit:l,setLimit:h,pageSize:P,data:o,isLoading:C,refetch:N,dataTableProps:A}};export{$ as useDataTable};
+import { useState as m, useCallback as S, useEffect as w } from "react";
+const u = (n) => new URLSearchParams(window.location.search).get(n), s = (n, g) => {
+  const c = new URL(window.location.href);
+  c.searchParams.set(n, g), window.history.replaceState({}, "", c.toString());
+}, x = ["actions"], $ = ({ service: n, payload: g = {}, renderersMap: c = {}, dataTableProps: p }) => {
+  const f = parseInt(u("page") || "1", 10), L = parseInt(u("limit") || "10", 10), R = {
+    columnAccessor: u("order_by") || "id",
+    direction: u("order") || "asc"
+  }, [i, T] = m(f), P = [10, 20, 30, 50, 100], [l, _] = m(L), [e, y] = m(R), { data: o, isLoading: C, refetch: N } = n({ page: i, limit: l, ...g, order_by: e.columnAccessor, order: e.direction }), r = S((t) => {
+    T(t), s("page", t.toString());
+  }, []), h = S(
+    (t) => {
+      _(t), s("limit", t.toString()), r(1);
+    },
+    [r]
+  );
+  w(() => {
+    s("page", i.toString()), s("limit", l.toString());
+  }, [i, l]), w(() => {
+    s("order_by", String(e.columnAccessor)), s("order", e.direction);
+  }, [e]);
+  const O = S(
+    (t) => {
+      y(t), r(1);
+    },
+    [r]
+  ), U = (t) => t.map((d) => {
+    const a = d.accessor;
+    return {
+      ...d,
+      sortable: d.sortable ?? !x.includes(a),
+      ...a && c[a] ? { render: c[a] } : {}
+    };
+  }), b = {
+    page: i,
+    recordsPerPage: o?.per_page ?? l,
+    totalRecords: o?.total || 0,
+    onPageChange: r,
+    records: o?.data || [],
+    columns: o?.columns ? U(o.columns) : [],
+    sortStatus: e,
+    onSortStatusChange: O,
+    onRecordsPerPageChange: h,
+    recordsPerPageOptions: P,
+    noRecordsText: "No se encontraron resultados que coincidan con tu búsqueda",
+    highlightOnHover: !0,
+    className: "whitespace-nowrap table-hover",
+    minHeight: 200,
+    paginationText: ({ from: t, to: d, totalRecords: a }) => `Mostrando del ${t} al ${d} de ${a} registros`
+  }, A = p ? p(b) : b;
+  return {
+    page: i,
+    setPage: r,
+    limit: l,
+    setLimit: h,
+    pageSize: P,
+    data: o,
+    isLoading: C,
+    refetch: N,
+    dataTableProps: A
+  };
+};
+export {
+  $ as useDataTable
+};

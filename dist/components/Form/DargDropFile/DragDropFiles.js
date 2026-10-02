@@ -1,1 +1,94 @@
-import{jsx as e,Fragment as v,jsxs as l}from"react/jsx-runtime";import f from"../../Buttons/Button.js";import{ButtonVariantEnum as p}from"../../Buttons/enums/buttonVariant.enum.js";import{useDragDropFiles as D}from"./useDragDropFiles.js";import c from"../../Typography/Typography.js";import{TypographyVariantEnum as m}from"../../Typography/enums/typographyVariant.enum.js";import{compressImages as H}from"../../../utils/imageCompression.js";import{Trash2 as I,FileText as P}from"lucide-react";import{useState as b}from"react";import{useTranslation as R}from"react-i18next";const G=({onUploadFile:h,isLoading:x,multiple:o,accept:y,...N})=>{const{t:r}=R(),[t,g]=b([]),[k,d]=b(!1),{onClick:u,getRootProps:w,getInputProps:F,getFileIcon:_}=D({onUploadFile:async i=>{const a=await H(i);g(n=>{let s;return k||n.length===0?(s=a,d(!1)):o?s=[...n,...a]:s=a,h(s),s})},multiple:o,accept:y}),C=()=>{g([]),d(!0),h([])},T=i=>{g(a=>{const n=a.filter((s,j)=>j!==i);return h(n),n.length===0?d(!0):d(!1),n})};return e(v,{children:e("section",{...N,className:`border-gray-mid flex items-center justify-center border border-dashed bg-[var(--input-background)] transition-all ${t.length===0?"min-h-[246px]":"min-h-[120px] py-4"}`,children:l("div",{...w({className:"flex flex-col justify-center items-center w-full"}),children:[e("input",{...F()}),t.length===0?l(v,{children:[e(c,{variant:m.H3,children:r("drag_file_into_the_box")}),e(c,{variant:m.H3,children:r("or")}),e("div",{className:"mt-4 mb-4 flex gap-4",children:e(f,{loading:x,onClick:u,variant:p.Solid,children:r("import")})})]}):l("div",{className:"flex w-full flex-col items-center gap-3 px-4 text-center",children:[o&&t.length>1?l("div",{className:"max-h-32 w-full overflow-y-auto",children:[l(c,{variant:m.H3,className:"mb-3",children:[t.length," ",r("files_selected")]}),e("div",{className:"w-full space-y-2",children:t.map((i,a)=>l("div",{className:"flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 px-3 py-3 shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-900/80 dark:hover:border-gray-600 dark:hover:bg-gray-900",children:[_(i.name),e("span",{className:"flex-1 truncate text-left text-sm font-medium text-gray-700 dark:text-gray-300",children:i.name}),e("button",{type:"button",onClick:n=>{n.stopPropagation(),T(a)},className:"flex-shrink-0 text-red-500 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300",title:r("delete"),children:e(I,{size:18})})]},a))})]}):l("div",{className:"flex flex-col items-center gap-5 text-center",children:[e(P,{size:48}),e(c,{variant:m.H3,children:t[0].name})]}),l("div",{className:"flex gap-4",children:[e(f,{variant:p.Outline,onClick:u,loading:x,className:"btn btn-primary text-white",children:o&&t.length>1?r("add_more"):r("replace")}),e(f,{variant:p.Outline,onClick:C,className:"btn btn-danger text-white hover:bg-red-600",children:o&&t.length>1?r("remove_all"):r("remove")})]})]})]})})})};export{G as default};
+import { jsx as e, Fragment as v, jsxs as l } from "react/jsx-runtime";
+import f from "../../Buttons/Button.js";
+import { ButtonVariantEnum as p } from "../../Buttons/enums/buttonVariant.enum.js";
+import { useDragDropFiles as D } from "./useDragDropFiles.js";
+import c from "../../Typography/Typography.js";
+import { TypographyVariantEnum as m } from "../../Typography/enums/typographyVariant.enum.js";
+import { compressImages as H } from "../../../utils/imageCompression.js";
+import { Trash2 as I, FileText as P } from "lucide-react";
+import { useState as b } from "react";
+import { useTranslation as R } from "react-i18next";
+const G = ({ onUploadFile: h, isLoading: x, multiple: o, accept: y, ...N }) => {
+  const { t: r } = R(), [t, g] = b([]), [k, d] = b(!1), { onClick: u, getRootProps: w, getInputProps: F, getFileIcon: _ } = D({
+    onUploadFile: async (i) => {
+      const a = await H(i);
+      g((n) => {
+        let s;
+        return k || n.length === 0 ? (s = a, d(!1)) : o ? s = [...n, ...a] : s = a, h(s), s;
+      });
+    },
+    multiple: o,
+    accept: y
+  }), C = () => {
+    g([]), d(!0), h([]);
+  }, T = (i) => {
+    g((a) => {
+      const n = a.filter((s, j) => j !== i);
+      return h(n), n.length === 0 ? d(!0) : d(!1), n;
+    });
+  };
+  return /* @__PURE__ */ e(v, { children: /* @__PURE__ */ e(
+    "section",
+    {
+      ...N,
+      className: `border-gray-mid flex items-center justify-center border border-dashed bg-[var(--input-background)] transition-all ${t.length === 0 ? "min-h-[246px]" : "min-h-[120px] py-4"}`,
+      children: /* @__PURE__ */ l(
+        "div",
+        {
+          ...w({
+            className: "flex flex-col justify-center items-center w-full"
+          }),
+          children: [
+            /* @__PURE__ */ e("input", { ...F() }),
+            t.length === 0 ? /* @__PURE__ */ l(v, { children: [
+              /* @__PURE__ */ e(c, { variant: m.H3, children: r("drag_file_into_the_box") }),
+              /* @__PURE__ */ e(c, { variant: m.H3, children: r("or") }),
+              /* @__PURE__ */ e("div", { className: "mt-4 mb-4 flex gap-4", children: /* @__PURE__ */ e(f, { loading: x, onClick: u, variant: p.Solid, children: r("import") }) })
+            ] }) : /* @__PURE__ */ l("div", { className: "flex w-full flex-col items-center gap-3 px-4 text-center", children: [
+              o && t.length > 1 ? /* @__PURE__ */ l("div", { className: "max-h-32 w-full overflow-y-auto", children: [
+                /* @__PURE__ */ l(c, { variant: m.H3, className: "mb-3", children: [
+                  t.length,
+                  " ",
+                  r("files_selected")
+                ] }),
+                /* @__PURE__ */ e("div", { className: "w-full space-y-2", children: t.map((i, a) => /* @__PURE__ */ l(
+                  "div",
+                  {
+                    className: "flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 px-3 py-3 shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-900/80 dark:hover:border-gray-600 dark:hover:bg-gray-900",
+                    children: [
+                      _(i.name),
+                      /* @__PURE__ */ e("span", { className: "flex-1 truncate text-left text-sm font-medium text-gray-700 dark:text-gray-300", children: i.name }),
+                      /* @__PURE__ */ e(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: (n) => {
+                            n.stopPropagation(), T(a);
+                          },
+                          className: "flex-shrink-0 text-red-500 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300",
+                          title: r("delete"),
+                          children: /* @__PURE__ */ e(I, { size: 18 })
+                        }
+                      )
+                    ]
+                  },
+                  a
+                )) })
+              ] }) : /* @__PURE__ */ l("div", { className: "flex flex-col items-center gap-5 text-center", children: [
+                /* @__PURE__ */ e(P, { size: 48 }),
+                /* @__PURE__ */ e(c, { variant: m.H3, children: t[0].name })
+              ] }),
+              /* @__PURE__ */ l("div", { className: "flex gap-4", children: [
+                /* @__PURE__ */ e(f, { variant: p.Outline, onClick: u, loading: x, className: "btn btn-primary text-white", children: o && t.length > 1 ? r("add_more") : r("replace") }),
+                /* @__PURE__ */ e(f, { variant: p.Outline, onClick: C, className: "btn btn-danger text-white hover:bg-red-600", children: o && t.length > 1 ? r("remove_all") : r("remove") })
+              ] })
+            ] })
+          ]
+        }
+      )
+    }
+  ) });
+};
+export {
+  G as default
+};

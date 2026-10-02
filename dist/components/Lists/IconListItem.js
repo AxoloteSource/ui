@@ -1,1 +1,22 @@
-import{jsx as t,jsxs as n}from"react/jsx-runtime";const i=({className:r=""})=>t("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",className:`text-primary inline h-4 w-4 ltr:mr-2 rtl:ml-2 rtl:rotate-180 ${r}`,children:t("path",{d:"M4 12H20M20 12L14 6M20 12L14 18",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round"})}),l=({children:r,className:e="",onClick:o=()=>{}})=>n("li",{className:e,onClick:o,children:[t(i,{}),r]});export{i as ArrowIcon,l as IconListItem,l as default};
+import { jsx as t, jsxs as n } from "react/jsx-runtime";
+const i = ({ className: r = "" }) => /* @__PURE__ */ t(
+  "svg",
+  {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: `text-primary inline h-4 w-4 ltr:mr-2 rtl:ml-2 rtl:rotate-180 ${r}`,
+    children: /* @__PURE__ */ t("path", { d: "M4 12H20M20 12L14 6M20 12L14 18", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })
+  }
+), l = ({ children: r, className: e = "", onClick: o = () => {
+} }) => /* @__PURE__ */ n("li", { className: e, onClick: o, children: [
+  /* @__PURE__ */ t(i, {}),
+  r
+] });
+export {
+  i as ArrowIcon,
+  l as IconListItem,
+  l as default
+};

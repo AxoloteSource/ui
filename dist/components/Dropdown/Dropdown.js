@@ -1,1 +1,21 @@
-import{jsxs as n,jsx as e,Fragment as h}from"react/jsx-runtime";import{forwardRef as v}from"react";import{DropdownVariantEnum as b}from"./DropdownVariantEnum.js";import{useDropdown as k}from"./useDropdown.js";const x=(t,i)=>{const{variant:l=b.Outline,color:s="primary",children:d,className:a=void 0,title:p}=t,{setReferenceElement:m,setVisibility:o,visibility:r,setPopperElement:c,styles:u,attributes:w,customClass:f}=k({variant:l,color:s,forwardedRef:i});return n("div",{className:"dropdown relative inline-flex align-middle",children:[e("button",{ref:m,type:"button",className:[f,a].join(" "),onClick:()=>o(!r),children:n(h,{children:[p,e("span",{children:e("svg",{className:"inline-block h-4 w-4 ltr:ml-1 rtl:mr-1",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:e("path",{d:"M19 9L12 15L5 9",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round"})})})]})}),e("div",{ref:c,style:u.popper,...w.popper,className:"z-[999]",onClick:()=>o(!r),children:r&&e("ul",{className:"!min-w-[170px] overflow-hidden rounded-md border border-[var(--border)] bg-[var(--popover)] p-1 shadow-md",children:d})})]})},C=v(x);export{C as default};
+import { jsxs as n, jsx as e, Fragment as h } from "react/jsx-runtime";
+import { forwardRef as v } from "react";
+import { DropdownVariantEnum as b } from "./DropdownVariantEnum.js";
+import { useDropdown as k } from "./useDropdown.js";
+const x = (t, i) => {
+  const { variant: l = b.Outline, color: s = "primary", children: d, className: a = void 0, title: p } = t, { setReferenceElement: m, setVisibility: o, visibility: r, setPopperElement: c, styles: u, attributes: w, customClass: f } = k({
+    variant: l,
+    color: s,
+    forwardedRef: i
+  });
+  return /* @__PURE__ */ n("div", { className: "dropdown relative inline-flex align-middle", children: [
+    /* @__PURE__ */ e("button", { ref: m, type: "button", className: [f, a].join(" "), onClick: () => o(!r), children: /* @__PURE__ */ n(h, { children: [
+      p,
+      /* @__PURE__ */ e("span", { children: /* @__PURE__ */ e("svg", { className: "inline-block h-4 w-4 ltr:ml-1 rtl:mr-1", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: /* @__PURE__ */ e("path", { d: "M19 9L12 15L5 9", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }) }) })
+    ] }) }),
+    /* @__PURE__ */ e("div", { ref: c, style: u.popper, ...w.popper, className: "z-[999]", onClick: () => o(!r), children: r && /* @__PURE__ */ e("ul", { className: "!min-w-[170px] overflow-hidden rounded-md border border-[var(--border)] bg-[var(--popover)] p-1 shadow-md", children: d }) })
+  ] });
+}, C = v(x);
+export {
+  C as default
+};

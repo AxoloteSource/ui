@@ -1,1 +1,22 @@
-import{jsxs as e,Fragment as o,jsx as t}from"react/jsx-runtime";import c from"../Buttons/Button.js";import{ButtonVariantEnum as m}from"../Buttons/enums/buttonVariant.enum.js";const x=({actions:i,renderModals:n})=>e(o,{children:[t("div",{className:"grid grid-cols-2 gap-3 sm:grid-cols-4",children:i.map(({label:r,icon:a,onClick:s})=>e(c,{variant:m.Outline,onClick:s,className:"flex flex-col items-center justify-center gap-2 rounded-xl py-5 text-gray-700 dark:text-gray-300",children:[t(a,{size:22}),t("span",{className:"text-xs font-medium",children:r})]},r))}),n]});export{x as default};
+import { jsxs as e, Fragment as o, jsx as t } from "react/jsx-runtime";
+import c from "../Buttons/Button.js";
+import { ButtonVariantEnum as m } from "../Buttons/enums/buttonVariant.enum.js";
+const x = ({ actions: i, renderModals: n }) => /* @__PURE__ */ e(o, { children: [
+  /* @__PURE__ */ t("div", { className: "grid grid-cols-2 gap-3 sm:grid-cols-4", children: i.map(({ label: r, icon: a, onClick: s }) => /* @__PURE__ */ e(
+    c,
+    {
+      variant: m.Outline,
+      onClick: s,
+      className: "flex flex-col items-center justify-center gap-2 rounded-xl py-5 text-gray-700 dark:text-gray-300",
+      children: [
+        /* @__PURE__ */ t(a, { size: 22 }),
+        /* @__PURE__ */ t("span", { className: "text-xs font-medium", children: r })
+      ]
+    },
+    r
+  )) }),
+  n
+] });
+export {
+  x as default
+};

@@ -46,8 +46,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    lib: {
+      entry: collectEntries(resolve(__dirname, 'src')),
+      formats: ['es']
+    },
     rollupOptions: {
-      input: collectEntries(resolve(__dirname, 'src')),
       preserveEntrySignatures: 'strict',
       external: (id) => !id.startsWith('.') && !id.startsWith('/') && !id.startsWith('@axolotesource/ui'),
       output: {

@@ -1,10 +1,11 @@
 import { ISelect } from './interfaces/ISelect'
+import { IOptions } from './interfaces/IOptions'
 import { WrapInput } from '../WrapInput'
 import { Field } from 'formik'
-import Select, { components } from 'react-select'
+import Select, { components, type DropdownIndicatorProps, type GroupBase } from 'react-select'
 import { useInputSelect } from './useInputSelect'
 
-const LoadingDropdownIndicator = (props: Record<string, unknown>) => {
+const LoadingDropdownIndicator = (props: DropdownIndicatorProps<IOptions, boolean, GroupBase<IOptions>>) => {
   return (
     <components.DropdownIndicator {...props}>
       <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-500 border-t-transparent dark:border-blue-400" />

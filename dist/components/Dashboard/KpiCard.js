@@ -1,1 +1,38 @@
-import{jsxs as t,jsx as s}from"react/jsx-runtime";import m from"../Card/Card.js";import{Tooltip as d}from"../Tooltip/Tooltip.js";import{Ticket as i,MinusCircle as x,PlusCircle as p,UserPlus as g,UserCheck as h,Users as u,ShoppingBag as l,Info as f,ArrowUpRight as y,ArrowDownRight as b,Minus as N}from"lucide-react";const w={shopping_bag:l,users:u,user_check:h,user_plus:g,plus_circle:p,minus_circle:x,ticket:i},U=({kpi:e})=>{const r=e.trend==="up",a=e.trend==="down",n=r?"text-emerald-600 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-500/10":a?"text-rose-600 bg-rose-50 dark:text-rose-400 dark:bg-rose-500/10":"text-gray-500 bg-gray-100 dark:text-gray-400 dark:bg-gray-800",o=r?y:a?b:N,c=w[e.icon]??l;return t(m,{className:"rounded-xl p-4 sm:p-5",children:[t("div",{className:"flex items-start justify-between gap-2",children:[t("div",{className:"min-w-0",children:[t("p",{className:"flex items-center gap-1 truncate text-xs font-medium text-gray-500 sm:text-sm dark:text-gray-400",children:[e.info&&s(d,{content:e.info,placement:"top",children:s(f,{size:13,className:"flex-shrink-0 cursor-help"})}),e.label]}),s("p",{className:"mt-1 text-xl font-bold text-gray-900 sm:mt-2 sm:text-2xl dark:text-gray-100",children:e.value.toLocaleString()})]}),s("span",{className:"flex-shrink-0 rounded-lg p-2 sm:p-2.5",style:{backgroundColor:`${e.color}1A`,color:e.color},children:s(c,{size:18,className:"h-[18px] w-[18px] sm:h-5 sm:w-5"})})]}),t("div",{className:"mt-2 flex items-center gap-2 text-xs sm:mt-3",children:[t("span",{className:`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 font-semibold sm:px-2 sm:py-1 ${n}`,children:[s(o,{size:12,className:"h-3 w-3 sm:h-3.5 sm:w-3.5"}),Math.abs(e.delta_pct).toFixed(1),"%"]}),s("span",{className:"truncate text-gray-400 dark:text-gray-500",children:"vs anterior"})]})]})};export{U as default};
+import { jsxs as t, jsx as s } from "react/jsx-runtime";
+import m from "../Card/Card.js";
+import { Tooltip as d } from "../Tooltip/Tooltip.js";
+import { Ticket as i, MinusCircle as x, PlusCircle as p, UserPlus as g, UserCheck as h, Users as u, ShoppingBag as l, Info as f, ArrowUpRight as y, ArrowDownRight as b, Minus as N } from "lucide-react";
+const w = {
+  shopping_bag: l,
+  users: u,
+  user_check: h,
+  user_plus: g,
+  plus_circle: p,
+  minus_circle: x,
+  ticket: i
+}, U = ({ kpi: e }) => {
+  const r = e.trend === "up", a = e.trend === "down", n = r ? "text-emerald-600 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-500/10" : a ? "text-rose-600 bg-rose-50 dark:text-rose-400 dark:bg-rose-500/10" : "text-gray-500 bg-gray-100 dark:text-gray-400 dark:bg-gray-800", o = r ? y : a ? b : N, c = w[e.icon] ?? l;
+  return /* @__PURE__ */ t(m, { className: "rounded-xl p-4 sm:p-5", children: [
+    /* @__PURE__ */ t("div", { className: "flex items-start justify-between gap-2", children: [
+      /* @__PURE__ */ t("div", { className: "min-w-0", children: [
+        /* @__PURE__ */ t("p", { className: "flex items-center gap-1 truncate text-xs font-medium text-gray-500 sm:text-sm dark:text-gray-400", children: [
+          e.info && /* @__PURE__ */ s(d, { content: e.info, placement: "top", children: /* @__PURE__ */ s(f, { size: 13, className: "flex-shrink-0 cursor-help" }) }),
+          e.label
+        ] }),
+        /* @__PURE__ */ s("p", { className: "mt-1 text-xl font-bold text-gray-900 sm:mt-2 sm:text-2xl dark:text-gray-100", children: e.value.toLocaleString() })
+      ] }),
+      /* @__PURE__ */ s("span", { className: "flex-shrink-0 rounded-lg p-2 sm:p-2.5", style: { backgroundColor: `${e.color}1A`, color: e.color }, children: /* @__PURE__ */ s(c, { size: 18, className: "h-[18px] w-[18px] sm:h-5 sm:w-5" }) })
+    ] }),
+    /* @__PURE__ */ t("div", { className: "mt-2 flex items-center gap-2 text-xs sm:mt-3", children: [
+      /* @__PURE__ */ t("span", { className: `inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 font-semibold sm:px-2 sm:py-1 ${n}`, children: [
+        /* @__PURE__ */ s(o, { size: 12, className: "h-3 w-3 sm:h-3.5 sm:w-3.5" }),
+        Math.abs(e.delta_pct).toFixed(1),
+        "%"
+      ] }),
+      /* @__PURE__ */ s("span", { className: "truncate text-gray-400 dark:text-gray-500", children: "vs anterior" })
+    ] })
+  ] });
+};
+export {
+  U as default
+};

@@ -1,1 +1,28 @@
-import{formatDate as g}from"../../../../../lib/formatDate.js";import{useState as r}from"react";import{useTranslation as p}from"react-i18next";const l=({receiverId:a,scrollToBottom:n,handleAddMessage:o,sendMessage:i})=>{const{t:m}=p(),[e,s]=r(""),[c,t]=r([]);return{message:e,setMessage:s,handleSendMessage:async()=>{if(e!=="")try{await i({message:e,user_id:a}),t([]),o({isSender:!0,message:e,imagePath:"",timeAgo:g(new Date().toISOString())}),s(""),n()}catch(d){t(d?.response?.data?.data?.message||[])}},t:m,error:c}};export{l as useInputSendMessage};
+import { formatDate as g } from "../../../../../lib/formatDate.js";
+import { useState as r } from "react";
+import { useTranslation as p } from "react-i18next";
+const l = ({ receiverId: a, scrollToBottom: n, handleAddMessage: o, sendMessage: i }) => {
+  const { t: m } = p(), [e, s] = r(""), [c, t] = r([]);
+  return {
+    message: e,
+    setMessage: s,
+    handleSendMessage: async () => {
+      if (e !== "")
+        try {
+          await i({ message: e, user_id: a }), t([]), o({
+            isSender: !0,
+            message: e,
+            imagePath: "",
+            timeAgo: g((/* @__PURE__ */ new Date()).toISOString())
+          }), s(""), n();
+        } catch (d) {
+          t(d?.response?.data?.data?.message || []);
+        }
+    },
+    t: m,
+    error: c
+  };
+};
+export {
+  l as useInputSendMessage
+};

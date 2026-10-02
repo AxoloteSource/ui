@@ -1,1 +1,30 @@
-import{jsxs as d,jsx as e}from"react/jsx-runtime";import{chartColors as o}from"../../lib/chartColors.js";import{ShieldAlert as i,AlertTriangle as s,Info as c}from"lucide-react";const m={info:{icon:c,color:o.info},warning:{icon:s,color:o.warning},danger:{icon:i,color:o.danger}},x=({alerts:l})=>l.length===0?d("div",{className:"flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300",children:[e("span",{className:"rounded-full bg-emerald-100 p-1.5 dark:bg-emerald-500/20",children:e("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",children:e("path",{d:"M20 6 9 17l-5-5"})})}),e("span",{className:"text-sm font-medium",children:"Todo funciona correctamente."})]}):e("div",{className:"grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3",children:l.map(r=>{const{icon:n,color:a}=m[r.severity],t=n;return d("div",{className:"flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-800/40",children:[e("span",{className:"rounded-lg p-2",style:{backgroundColor:`${a}1A`,color:a},children:e(t,{size:18})}),d("div",{children:[e("p",{className:"text-sm font-semibold text-gray-800 dark:text-gray-200",children:r.message}),r.link&&e("a",{href:r.link,className:"text-primary text-xs font-medium hover:underline",children:"Ver detalle"})]})]},r.type)})});export{x as default};
+import { jsxs as d, jsx as e } from "react/jsx-runtime";
+import { chartColors as o } from "../../lib/chartColors.js";
+import { ShieldAlert as i, AlertTriangle as s, Info as c } from "lucide-react";
+const m = {
+  info: { icon: c, color: o.info },
+  warning: { icon: s, color: o.warning },
+  danger: { icon: i, color: o.danger }
+}, x = ({ alerts: l }) => l.length === 0 ? /* @__PURE__ */ d("div", { className: "flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300", children: [
+  /* @__PURE__ */ e("span", { className: "rounded-full bg-emerald-100 p-1.5 dark:bg-emerald-500/20", children: /* @__PURE__ */ e("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", children: /* @__PURE__ */ e("path", { d: "M20 6 9 17l-5-5" }) }) }),
+  /* @__PURE__ */ e("span", { className: "text-sm font-medium", children: "Todo funciona correctamente." })
+] }) : /* @__PURE__ */ e("div", { className: "grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3", children: l.map((r) => {
+  const { icon: n, color: a } = m[r.severity], t = n;
+  return /* @__PURE__ */ d(
+    "div",
+    {
+      className: "flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-800/40",
+      children: [
+        /* @__PURE__ */ e("span", { className: "rounded-lg p-2", style: { backgroundColor: `${a}1A`, color: a }, children: /* @__PURE__ */ e(t, { size: 18 }) }),
+        /* @__PURE__ */ d("div", { children: [
+          /* @__PURE__ */ e("p", { className: "text-sm font-semibold text-gray-800 dark:text-gray-200", children: r.message }),
+          r.link && /* @__PURE__ */ e("a", { href: r.link, className: "text-primary text-xs font-medium hover:underline", children: "Ver detalle" })
+        ] })
+      ]
+    },
+    r.type
+  );
+}) });
+export {
+  x as default
+};

@@ -1,1 +1,58 @@
-import{jsx as e,jsxs as a}from"react/jsx-runtime";import{CloseButton as u}from"../Buttons/CloseButton.js";import h from"../Typography/Typography.js";import{TypographyVariantEnum as v}from"../Typography/enums/typographyVariant.enum.js";import{Transition as o,Dialog as s}from"@headlessui/react";import{Fragment as r}from"react";import{useModal as f}from"./useModal.js";const C=n=>{const{title:l,children:c,isOpen:i,className:t,icon:d,close:m,preventCloseOutside:p}=f(n);return e(o,{appear:!0,show:i,as:r,children:a(s,{as:"div",open:i,onClose:p,children:[e(o.Child,{as:r,enter:"ease-out duration-300",enterFrom:"opacity-0",enterTo:"opacity-100",leave:"ease-in duration-200",leaveFrom:"opacity-100",leaveTo:"opacity-0",children:e("div",{className:"fixed inset-0"})}),e("div",{className:"fixed inset-0 z-[100] overflow-y-auto bg-[var(--modal-background)]",children:e("div",{className:"flex min-h-screen items-start justify-center px-4",children:e(o.Child,{as:r,enter:"ease-out duration-300",enterFrom:"opacity-0 scale-95",enterTo:"opacity-100 scale-100",leave:"ease-in duration-200",leaveFrom:"opacity-100 scale-100",leaveTo:"opacity-0 scale-95",children:a(s.Panel,{as:"div",className:`panel dark:text-white-dark my-8 overflow-hidden rounded-lg border-0 p-0 text-black ${t||""}`,children:[a("div",{className:"bg-background flex items-center justify-between px-5 py-3",children:[a(h,{variant:v.H3,className:"flex items-center gap-2",children:[d," ",l]}),e(u,{onClick:m})]}),e("div",{className:"p-5",children:c})]})})})})]})})};export{C as default};
+import { jsx as e, jsxs as a } from "react/jsx-runtime";
+import { CloseButton as u } from "../Buttons/CloseButton.js";
+import h from "../Typography/Typography.js";
+import { TypographyVariantEnum as v } from "../Typography/enums/typographyVariant.enum.js";
+import { Transition as o, Dialog as s } from "@headlessui/react";
+import { Fragment as r } from "react";
+import { useModal as f } from "./useModal.js";
+const C = (n) => {
+  const { title: l, children: c, isOpen: i, className: t, icon: d, close: m, preventCloseOutside: p } = f(n);
+  return /* @__PURE__ */ e(o, { appear: !0, show: i, as: r, children: /* @__PURE__ */ a(s, { as: "div", open: i, onClose: p, children: [
+    /* @__PURE__ */ e(
+      o.Child,
+      {
+        as: r,
+        enter: "ease-out duration-300",
+        enterFrom: "opacity-0",
+        enterTo: "opacity-100",
+        leave: "ease-in duration-200",
+        leaveFrom: "opacity-100",
+        leaveTo: "opacity-0",
+        children: /* @__PURE__ */ e("div", { className: "fixed inset-0" })
+      }
+    ),
+    /* @__PURE__ */ e("div", { className: "fixed inset-0 z-[100] overflow-y-auto bg-[var(--modal-background)]", children: /* @__PURE__ */ e("div", { className: "flex min-h-screen items-start justify-center px-4", children: /* @__PURE__ */ e(
+      o.Child,
+      {
+        as: r,
+        enter: "ease-out duration-300",
+        enterFrom: "opacity-0 scale-95",
+        enterTo: "opacity-100 scale-100",
+        leave: "ease-in duration-200",
+        leaveFrom: "opacity-100 scale-100",
+        leaveTo: "opacity-0 scale-95",
+        children: /* @__PURE__ */ a(
+          s.Panel,
+          {
+            as: "div",
+            className: `panel dark:text-white-dark my-8 overflow-hidden rounded-lg border-0 p-0 text-black ${t || ""}`,
+            children: [
+              /* @__PURE__ */ a("div", { className: "bg-background flex items-center justify-between px-5 py-3", children: [
+                /* @__PURE__ */ a(h, { variant: v.H3, className: "flex items-center gap-2", children: [
+                  d,
+                  " ",
+                  l
+                ] }),
+                /* @__PURE__ */ e(u, { onClick: m })
+              ] }),
+              /* @__PURE__ */ e("div", { className: "p-5", children: c })
+            ]
+          }
+        )
+      }
+    ) }) })
+  ] }) });
+};
+export {
+  C as default
+};

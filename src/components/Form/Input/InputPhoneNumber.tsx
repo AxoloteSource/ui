@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { Field, FieldProps } from 'formik'
+import { type ReactNode } from 'react'
 import { IInputPhoneNumberProps } from './interfaces/IInputPhoneNumberProps'
 import { PhoneField } from './partials/PhoneField'
 // import 'react-phone-input-2/lib/style.css'
@@ -27,7 +28,7 @@ const InputPhoneNumber = <T extends object>(props: IInputPhoneNumberProps<T>) =>
       {formik.submitCount ? (
         formik.errors[name] || formik.errors[nameCode] ? (
           <div className="text-danger mt-1">
-            {formik.errors[name]} {formik.errors[nameCode]}
+            {formik.errors[name] as ReactNode} {formik.errors[nameCode] as ReactNode}
           </div>
         ) : (
           ''

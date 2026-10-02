@@ -1,7 +1,8 @@
+import { Placement } from '@popperjs/core';
 import { ReactNode } from 'react';
 interface DropdownOldProps {
-    placement?: string;
-    offset?: number[];
+    placement?: Placement;
+    offset?: [number, number];
     btnClassName?: string;
     button: ReactNode;
     children: ReactNode;

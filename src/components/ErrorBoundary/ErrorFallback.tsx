@@ -59,7 +59,7 @@ const copyToClipboard = async (text: string) => {
 }
 
 export const ErrorFallback = ({ error }: FallbackProps) => {
-  const errorInfo = getErrorInfo(error)
+  const errorInfo = getErrorInfo(error as Error)
   const isDev = import.meta.env.DEV
 
   const errorReport = `

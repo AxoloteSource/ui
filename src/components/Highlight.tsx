@@ -6,8 +6,9 @@ const CodeHighlight = ({ children }: PropsWithChildren) => {
   const highlightElement = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (highlightElement?.current) {
-      hightlight.highlightElement(highlightElement.current.querySelector('pre'))
+    const pre = highlightElement.current?.querySelector('pre')
+    if (pre) {
+      hightlight.highlightElement(pre)
     }
   }, [])
 

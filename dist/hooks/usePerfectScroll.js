@@ -1,1 +1,39 @@
-import{useRef as i,useState as H,useEffect as S}from"react";import{useTranslation as m}from"react-i18next";const u=16,Y=({hasNextPage:e,isFetchingNextPage:l,fetchNextPage:a})=>{const s=i(null),f=i(!0),[c,p]=H(!1),{t:T}=m(),h=()=>{const o=s.current;o&&(o.scrollTop=o.scrollHeight)};return S(()=>{const o=s.current;o&&(o.scrollTop=o.scrollHeight)},[]),{handleScrollY:o=>{const t=s.current;if(!t)return;const n=t.scrollHeight-t.scrollTop-t.clientHeight;f.current=n<=u;const r=(o?.scrollTop??0)<=u;r!==c&&p(r)},scrollElRef:s,scrollToBottom:h,onYReachStart:async()=>{if(!e||l)return;const o=s.current;if(!o)return;const t=o.scrollHeight,n=o.scrollTop;await a(),requestAnimationFrame(()=>{const r=o.scrollHeight;o.scrollTop=n+(r-t)})},showNoMessages:c&&!l&&!e,showLoaderMessages:c&&l&&e,t:T}};export{Y as usePerfectScroll};
+import { useRef as i, useState as H, useEffect as S } from "react";
+import { useTranslation as m } from "react-i18next";
+const u = 16, Y = ({ hasNextPage: e, isFetchingNextPage: l, fetchNextPage: a }) => {
+  const s = i(null), f = i(!0), [c, p] = H(!1), { t: T } = m(), h = () => {
+    const o = s.current;
+    o && (o.scrollTop = o.scrollHeight);
+  };
+  return S(() => {
+    const o = s.current;
+    o && (o.scrollTop = o.scrollHeight);
+  }, []), {
+    handleScrollY: (o) => {
+      const t = s.current;
+      if (!t) return;
+      const n = t.scrollHeight - t.scrollTop - t.clientHeight;
+      f.current = n <= u;
+      const r = (o?.scrollTop ?? 0) <= u;
+      r !== c && p(r);
+    },
+    scrollElRef: s,
+    scrollToBottom: h,
+    onYReachStart: async () => {
+      if (!e || l) return;
+      const o = s.current;
+      if (!o) return;
+      const t = o.scrollHeight, n = o.scrollTop;
+      await a(), requestAnimationFrame(() => {
+        const r = o.scrollHeight;
+        o.scrollTop = n + (r - t);
+      });
+    },
+    showNoMessages: c && !l && !e,
+    showLoaderMessages: c && l && e,
+    t: T
+  };
+};
+export {
+  Y as usePerfectScroll
+};

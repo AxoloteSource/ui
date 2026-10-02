@@ -1,9 +1,9 @@
 import { FormikProps } from 'formik'
 import React from 'react'
 
-interface WrapInputProps<T> {
+interface WrapInputProps<T extends object> {
   name: Extract<keyof T, string>
-  formik: FormikProps<Record<string, unknown>>
+  formik: FormikProps<T>
   label?: string
   children: React.ReactNode
   parentWrapper?: boolean

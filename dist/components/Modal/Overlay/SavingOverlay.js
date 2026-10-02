@@ -1,1 +1,8 @@
-import{jsxs as a,jsx as e}from"react/jsx-runtime";const n=({isVisible:r,message:t="Guardando..."})=>r?a("div",{className:"absolute inset-0 z-50 flex flex-col items-center justify-center bg-white/70 backdrop-blur-sm dark:bg-gray-900/70",children:[e("div",{className:"h-10 w-10 animate-spin rounded-full border-2 border-blue-500 border-t-transparent dark:border-blue-400"}),e("span",{className:"mt-3 text-sm font-medium text-gray-700 dark:text-gray-200",children:t})]}):null;export{n as SavingOverlay};
+import { jsxs as a, jsx as e } from "react/jsx-runtime";
+const n = ({ isVisible: r, message: t = "Guardando..." }) => r ? /* @__PURE__ */ a("div", { className: "absolute inset-0 z-50 flex flex-col items-center justify-center bg-white/70 backdrop-blur-sm dark:bg-gray-900/70", children: [
+  /* @__PURE__ */ e("div", { className: "h-10 w-10 animate-spin rounded-full border-2 border-blue-500 border-t-transparent dark:border-blue-400" }),
+  /* @__PURE__ */ e("span", { className: "mt-3 text-sm font-medium text-gray-700 dark:text-gray-200", children: t })
+] }) : null;
+export {
+  n as SavingOverlay
+};
