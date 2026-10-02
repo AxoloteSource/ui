@@ -8,9 +8,9 @@
     "description": "Librería de componentes React reutilizables de AxoloteSource",
     "repository": {
         "type": "git",
-        "url": "https://github.com/AxoloteSource/axolote-ui.git"
+        "url": "https://github.com/AxoloteSource/ui.git"
     },
-    "homepage": "https://github.com/AxoloteSource/axolote-ui",
+    "homepage": "https://github.com/AxoloteSource/ui",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
     },
