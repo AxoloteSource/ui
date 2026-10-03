@@ -40,7 +40,9 @@
         "src"
     ],
     "scripts": {
-        "build": "vite build",
+        "build": "vite build && vite build --mode types",
+        "build:js": "vite build",
+        "build:types": "vite build --mode types",
         "dev": "vite build --watch",
         "types": "tsc --noEmit",
         "lint": "eslint . --fix",
