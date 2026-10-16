@@ -30,6 +30,9 @@ function collectEntries(dir: string, base = dir): Record<string, string> {
     const full = path.join(dir, entry.name)
 
     if (entry.isDirectory()) {
+      if (entry.name === 'test' || entry.name === '__tests__') {
+        continue
+      }
       Object.assign(entries, collectEntries(full, base))
       continue
     }
@@ -67,7 +70,7 @@ export default defineConfig(({ mode }) => {
             dts({
               tsconfigPath: './tsconfig.json',
               include: ['src'],
-              exclude: ['src/**/*.test.*', 'src/**/*.spec.*'],
+              exclude: ['src/**/*.test.*', 'src/**/*.spec.*', 'src/test/**'],
               declarationOnly: true
             })
           ]
