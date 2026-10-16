@@ -31,7 +31,7 @@
         "./package.json": "./package.json",
         "./*": {
             "development": "./src/*",
-            "types": "./dist/*.d.ts",
+            "types": ["./dist/*.d.ts", "./dist/*/index.d.ts"],
             "import": "./dist/*.js"
         }
     },
