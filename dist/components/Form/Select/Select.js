@@ -1,47 +1,52 @@
 import { jsx as t } from "react/jsx-runtime";
-import { WrapInput as k } from "../WrapInput.js";
-import { Field as f } from "formik";
-import w, { components as v } from "react-select";
-import { useInputSelect as I } from "./useInputSelect.js";
-const y = (a) => /* @__PURE__ */ t(v.DropdownIndicator, { ...a, children: /* @__PURE__ */ t("div", { className: "h-4 w-4 animate-spin rounded-full border-2 border-blue-500 border-t-transparent dark:border-blue-400" }) }), C = () => null, M = (a) => {
+import { WrapInput as I } from "../WrapInput.js";
+import { Field as v } from "formik";
+import y, { components as S } from "react-select";
+import { useInputSelect as C } from "./useInputSelect.js";
+const O = (r) => /* @__PURE__ */ t(S.DropdownIndicator, { ...r, children: /* @__PURE__ */ t("div", { className: "h-4 w-4 animate-spin rounded-full border-2 border-blue-500 border-t-transparent dark:border-blue-400" }) }), L = () => null, z = (r) => {
   const {
-    label: s = "",
-    name: r,
-    formik: n,
-    disabled: u = !1,
+    label: p = "",
+    name: o,
+    formik: a,
+    disabled: c = !1,
     options: d = [],
     isMulti: i = !1,
-    onChange: c,
-    onInputChange: p,
-    className: g = "",
-    isSearchable: m = !0,
-    filterOption: o = null,
-    isClearable: b = !0,
-    isLoading: l = !0
-  } = a, { selectedValue: h, handleOnChange: x } = I({
-    name: r,
-    formik: n,
+    onChange: g,
+    onInputChange: m,
+    className: b = "",
+    isSearchable: h = !0,
+    filterOption: n = null,
+    isClearable: x = !0,
+    isLoading: l = !0,
+    OptionComponent: s,
+    SingleValueComponent: u,
+    noOptionsMessage: k = "Sin opciones"
+  } = r, { selectedValue: f, handleOnChange: w } = C({
+    name: o,
+    formik: a,
     options: d,
     isMulti: i,
-    onChange: c
+    onChange: g
   });
-  return /* @__PURE__ */ t(k, { name: r, formik: n, label: s, className: g, children: /* @__PURE__ */ t(f, { disabled: u, name: r, id: r, children: () => /* @__PURE__ */ t(
-    w,
+  return /* @__PURE__ */ t(I, { name: o, formik: a, label: p, className: b, children: /* @__PURE__ */ t(v, { disabled: c, name: o, id: o, children: () => /* @__PURE__ */ t(
+    y,
     {
-      value: h,
+      value: f,
       options: d,
-      isSearchable: m,
-      onChange: x,
-      onInputChange: p,
+      isSearchable: h,
+      onChange: w,
+      onInputChange: m,
       isMulti: i,
-      isClearable: b,
+      isClearable: x,
       isLoading: l,
       loadingMessage: () => "Cargando...",
-      components: l ? {
-        DropdownIndicator: y,
-        LoadingIndicator: C
-      } : void 0,
-      filterOption: o !== null ? typeof o == "function" ? o : () => o : void 0,
+      noOptionsMessage: () => k,
+      components: {
+        ...l ? { DropdownIndicator: O, LoadingIndicator: L } : {},
+        ...s ? { Option: s } : {},
+        ...u ? { SingleValue: u } : {}
+      },
+      filterOption: n !== null ? typeof n == "function" ? n : () => n : void 0,
       menuPortalTarget: document.body,
       styles: {
         menuPortal: (e) => ({ ...e, zIndex: 9999 })
@@ -63,5 +68,5 @@ const y = (a) => /* @__PURE__ */ t(v.DropdownIndicator, { ...a, children: /* @__
   ) }) });
 };
 export {
-  M as default
+  z as default
 };

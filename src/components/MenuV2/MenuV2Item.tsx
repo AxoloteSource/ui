@@ -32,9 +32,11 @@ export const MenuV2Item = ({ item, editMode = false, onEdit, onDelete, onToggleR
           `group${editMode ? 'ltr:pr-20 rtl:pl-20' : ''}${isMissing ? 'bg-gray-500!' : ''}${!editMode && isActive ? 'active' : ''}`
         }
       >
-        <div className="flex items-center">
+        <div className="flex min-w-0 items-center">
           {icon}
-          <span className={isMissing ? 'text-white' : isDisabled ? 'text-gray-400' : ''}>{t(item.name)}</span>
+          <span className={`truncate ${isMissing ? 'text-white' : isDisabled ? 'text-gray-400' : ''}`} title={t(item.name)}>
+            {t(item.name)}
+          </span>
         </div>
       </NavLink>
       {editMode && (

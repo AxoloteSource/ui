@@ -315,6 +315,43 @@
     @apply text-primary;
   }
 
+  /* Deeper sub-menu levels indent further (RTL-aware via logical padding). Level 3+ must be visibly right of level 2. */
+  .sidebar ul.sub-menu ul.sub-menu li button,
+  .sidebar ul.sub-menu ul.sub-menu li a {
+    padding-inline-start: 3.25rem;
+  }
+  .sidebar ul.sub-menu ul.sub-menu ul.sub-menu li button,
+  .sidebar ul.sub-menu ul.sub-menu ul.sub-menu li a {
+    padding-inline-start: 4.5rem;
+  }
+
+  /* HAG-27: make nested levels stand out — subtle tree guide line + secondary text color (RTL-aware: logical props). */
+  .sidebar ul.sub-menu ul.sub-menu {
+    position: relative;
+  }
+  .sidebar ul.sub-menu ul.sub-menu::before {
+    content: '';
+    position: absolute;
+    inset-block: 0.25rem;
+    inset-inline-start: 2.5rem;
+    width: 0;
+    border-inline-start: 1px solid var(--border);
+    pointer-events: none;
+  }
+  .sidebar ul.sub-menu ul.sub-menu ul.sub-menu::before {
+    inset-inline-start: 3.75rem;
+  }
+  .sidebar ul.sub-menu ul.sub-menu li a,
+  .sidebar ul.sub-menu ul.sub-menu li button {
+    color: var(--muted-foreground);
+  }
+  .sidebar ul.sub-menu ul.sub-menu li a:hover,
+  .sidebar ul.sub-menu ul.sub-menu li button:hover,
+  .sidebar ul.sub-menu ul.sub-menu li a.active,
+  .sidebar ul.sub-menu ul.sub-menu li button.active {
+    color: var(--primary);
+  }
+
   .sidebar .nav-item a div:first-child svg,
   .sidebar .nav-item button div:first-child svg {
     @apply h-5 w-5 text-[var(--text)];

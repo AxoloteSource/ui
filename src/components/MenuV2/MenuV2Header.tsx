@@ -1,11 +1,23 @@
 import { IMenuItem } from '../../interfaces/models/MenuItem/IMenuItem'
 import { ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
 import { MenuV2Actions } from './MenuV2Actions'
 import { MenuV2SubMenu } from './MenuV2SubMenu'
 import { resolveIcon } from './resolveIcon'
+
+const pathIsActive = (path: string | null | undefined, current: string): boolean => {
+  if (!path || path === '#') {
+    return false
+  }
+  const base = path.endsWith('/') ? path.slice(0, -1) : path
+  return base === current || (base.length > 1 && current.startsWith(`${base}/`))
+}
+
+const hasActiveDescendant = (items: IMenuItem[], current: string): boolean =>
+  items.some((child) => pathIsActive(child.path || child.route, current) || hasActiveDescendant(child.children ?? [], current))
 
 interface IMenuV2HeaderProps {
   item: IMenuItem
@@ -17,12 +29,20 @@ interface IMenuV2HeaderProps {
 
 export const MenuV2Header = ({ item, editMode = false, onEdit, onDelete, onToggleRole }: IMenuV2HeaderProps) => {
   const { t } = useTranslation()
-  const [open, setOpen] = useState(false)
-  const icon = resolveIcon(item.icon, 'group-hover:!text-primary shrink-0 ltr:mr-2')
+  const location = useLocation()
   const children = item.children ?? []
+  const containsActiveRoute = hasActiveDescendant(children, location.pathname)
+  const [open, setOpen] = useState(containsActiveRoute)
+  const icon = resolveIcon(item.icon, 'group-hover:!text-primary shrink-0 ltr:mr-2')
   const isMissing = editMode && item.has_role === false
   const isDisabled = item.active === false
   const isOpen = editMode ? true : open
+
+  useEffect(() => {
+    if (containsActiveRoute) {
+      setOpen(true)
+    }
+  }, [containsActiveRoute])
 
   return (
     <li className="menu nav-item relative">
@@ -47,12 +67,14 @@ export const MenuV2Header = ({ item, editMode = false, onEdit, onDelete, onToggl
         }}
         className={`group relative w-full cursor-pointer${editMode ? 'ltr:pr-20 rtl:pl-20' : ''}${isMissing ? 'bg-gray-500!' : ''}`}
       >
-        <span className="flex w-full items-center justify-between">
-          <span className="flex items-center">
+        <span className="flex w-full min-w-0 items-center justify-between">
+          <span className="flex min-w-0 items-center">
             {icon}
-            <span className={isMissing ? 'text-white' : isDisabled ? 'text-gray-400' : ''}>{t(item.name)}</span>
+            <span className={`truncate ${isMissing ? 'text-white' : isDisabled ? 'text-gray-400' : ''}`} title={t(item.name)}>
+              {t(item.name)}
+            </span>
           </span>
-          <span className={isOpen ? '!rotate-90' : 'rtl:rotate-180'}>
+          <span className={`shrink-0 ${isOpen ? '!rotate-90' : 'rtl:rotate-180'}`}>
             <ChevronRight />
           </span>
         </span>

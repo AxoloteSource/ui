@@ -1,14 +1,23 @@
+import { IPaginate } from '../interfaces/IPaginate'
 import { DataTableColumn, DataTableSortStatus } from 'mantine-datatable'
 import { useCallback, useEffect, useState } from 'react'
 
-export interface DataTableRenderersMap {
-  [key: string]: (record: Record<string, unknown>) => React.ReactNode
+export interface DataTableRenderersMap<T = any> {
+  [key: string]: (record: T) => React.ReactNode
 }
 
-interface UseDataTableParams {
-  service: (params: Record<string, unknown>) => { data?: Record<string, unknown>; isLoading: boolean; refetch: () => void }
+export interface DataTableServiceResult<T = any> {
+  data?: IPaginate<T>
+  isLoading: boolean
+  refetch: () => void
+}
+
+export type DataTableService<T = any> = (params: Record<string, unknown>) => DataTableServiceResult<T>
+
+interface UseDataTableParams<T = any> {
+  service: DataTableService<T>
   payload?: Record<string, unknown>
-  renderersMap?: DataTableRenderersMap
+  renderersMap?: DataTableRenderersMap<T>
   dataTableProps?: (props: Record<string, unknown>) => Record<string, unknown>
 }
 

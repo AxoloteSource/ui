@@ -29,7 +29,10 @@ const InputSelect = <T extends object>(props: ISelect<T>) => {
     isSearchable = true,
     filterOption = null,
     isClearable = true,
-    isLoading = true
+    isLoading = true,
+    OptionComponent,
+    SingleValueComponent,
+    noOptionsMessage = 'Sin opciones'
   } = props
 
   const { selectedValue, handleOnChange } = useInputSelect({
@@ -54,14 +57,12 @@ const InputSelect = <T extends object>(props: ISelect<T>) => {
             isClearable={isClearable}
             isLoading={isLoading}
             loadingMessage={() => 'Cargando...'}
-            components={
-              isLoading
-                ? {
-                    DropdownIndicator: LoadingDropdownIndicator,
-                    LoadingIndicator: NoLoadingIndicator
-                  }
-                : undefined
-            }
+            noOptionsMessage={() => noOptionsMessage}
+            components={{
+              ...(isLoading ? { DropdownIndicator: LoadingDropdownIndicator, LoadingIndicator: NoLoadingIndicator } : {}),
+              ...(OptionComponent ? { Option: OptionComponent } : {}),
+              ...(SingleValueComponent ? { SingleValue: SingleValueComponent } : {})
+            }}
             filterOption={filterOption !== null ? (typeof filterOption === 'function' ? filterOption : () => filterOption as boolean) : undefined}
             menuPortalTarget={document.body}
             styles={{

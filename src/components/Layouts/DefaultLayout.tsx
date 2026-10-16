@@ -6,7 +6,7 @@ import Header from './Header'
 import Setting from './Setting'
 import Sidebar from './Sidebar/Sidebar'
 
-const DefaultLayout = ({ children }: PropsWithChildren) => {
+const DefaultLayout = ({ children, showCustomizer = false }: PropsWithChildren<{ showCustomizer?: boolean }>) => {
   const { themeConfig, toggleSidebar } = useAxoloteUI()
   const [showLoader, setShowLoader] = useState(false)
   const [showTopButton, setShowTopButton] = useState(false)
@@ -71,7 +71,7 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
         )}
       </div>
 
-      <Setting />
+      {showCustomizer && <Setting />}
 
       <div className={`${themeConfig.navbar} main-container dark:text-white-dark min-h-screen text-black`}>
         <Sidebar />

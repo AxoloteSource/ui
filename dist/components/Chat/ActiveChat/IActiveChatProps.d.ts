@@ -15,4 +15,6 @@ export interface ActiveChatProps {
         message: string;
         user_id: string;
     }) => Promise<unknown>;
+    /** When true, renders a view-only thread: header + messages + scroll, no composer. */
+    readOnly?: boolean;
 }

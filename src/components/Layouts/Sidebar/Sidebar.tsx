@@ -18,9 +18,14 @@ const Sidebar = () => {
       >
         <div className="bg-sidebar-background h-full">
           <div className="flex items-center justify-between px-4 py-3">
-            <NavLink to="/" className="main-logo flex shrink-0 items-center">
-              {logoDark && <img src={logo} alt={brand} className="h-9 w-auto dark:hidden" />}
+            <NavLink to="/" className="main-logo flex min-w-0 items-center gap-2">
+              {logo && <img src={logo} alt={brand} className="h-9 w-auto dark:hidden" />}
               {logoDark && <img src={logoDark} alt={brand} className="hidden h-9 w-auto dark:block" />}
+              {!logo && !logoDark && (
+                <span className="truncate text-lg font-bold text-[var(--text)]" title={brand}>
+                  {brand}
+                </span>
+              )}
             </NavLink>
 
             <button

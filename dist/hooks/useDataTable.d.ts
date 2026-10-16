@@ -1,15 +1,18 @@
+import { IPaginate } from '../interfaces/IPaginate';
 import { DataTableSortStatus } from 'mantine-datatable';
-export interface DataTableRenderersMap {
-    [key: string]: (record: Record<string, unknown>) => React.ReactNode;
+export interface DataTableRenderersMap<T = any> {
+    [key: string]: (record: T) => React.ReactNode;
 }
-interface UseDataTableParams {
-    service: (params: Record<string, unknown>) => {
-        data?: Record<string, unknown>;
-        isLoading: boolean;
-        refetch: () => void;
-    };
+export interface DataTableServiceResult<T = any> {
+    data?: IPaginate<T>;
+    isLoading: boolean;
+    refetch: () => void;
+}
+export type DataTableService<T = any> = (params: Record<string, unknown>) => DataTableServiceResult<T>;
+interface UseDataTableParams<T = any> {
+    service: DataTableService<T>;
     payload?: Record<string, unknown>;
-    renderersMap?: DataTableRenderersMap;
+    renderersMap?: DataTableRenderersMap<T>;
     dataTableProps?: (props: Record<string, unknown>) => Record<string, unknown>;
 }
 export declare const useDataTable: ({ service, payload, renderersMap, dataTableProps }: UseDataTableParams) => {
@@ -18,15 +21,15 @@ export declare const useDataTable: ({ service, payload, renderersMap, dataTableP
     limit: number;
     setLimit: (newLimit: number) => void;
     pageSize: number[];
-    data: Record<string, unknown> | undefined;
+    data: IPaginate<any> | undefined;
     isLoading: boolean;
     refetch: () => void;
     dataTableProps: Record<string, unknown> | {
         page: number;
-        recordsPerPage: {};
-        totalRecords: {};
+        recordsPerPage: number;
+        totalRecords: number;
         onPageChange: (newPage: number) => void;
-        records: {};
+        records: any[];
         columns: ({
             render?: ((record: Record<string, unknown>, index: number) => React.ReactNode) | undefined;
             sortable: boolean;

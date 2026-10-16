@@ -1,1 +1,3 @@
-export { default } from './AlertIcon'
+export { default } from './Alert'
+export { default as Alert } from './Alert'
+export { default as AlertIcon } from './AlertIcon'

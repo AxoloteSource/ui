@@ -1,6 +1,8 @@
-import { InfoTooltip as f } from "./Input/InfoTooltip.js";
-import { default as r } from "./Input/Input.js";
+import { InfoTooltip as e } from "./Input/InfoTooltip.js";
+import { default as f } from "./Input/Input.js";
+import { default as u } from "./Input/InputPhoneNumber.js";
 export {
-  f as InfoTooltip,
-  r as Input
+  e as InfoTooltip,
+  f as Input,
+  u as InputPhoneNumber
 };

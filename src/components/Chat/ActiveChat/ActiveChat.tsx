@@ -17,7 +17,8 @@ export const ActiveChat = ({
   subtitleUserCard,
   receiverId,
   selectedChat,
-  sendMessage
+  sendMessage,
+  readOnly = false
 }: ActiveChatProps) => {
   const { hasNextPage, isFetchingNextPage, fetchNextPage } = scrollMessageListProps
   const { handleScrollY, scrollElRef, onYReachStart, showNoMessages, showLoaderMessages, t, scrollToBottom } = usePerfectScroll({
@@ -39,7 +40,7 @@ export const ActiveChat = ({
         onScrollY={handleScrollY}
         onYReachStart={onYReachStart}
       >
-        <div className="min-h-[400px] space-y-5 p-3 pb-[68px] sm:min-h-[300px] sm:pb-0">
+        <div className={`min-h-[400px] space-y-5 p-3 sm:min-h-[300px] sm:pb-0 ${readOnly ? '' : 'pb-[68px]'}`}>
           {showLoaderMessages && (
             <ChatMessage message={t('loading_messages')}>
               <Loader />
@@ -53,7 +54,9 @@ export const ActiveChat = ({
           </div>
         </div>
       </PerfectScrollbar>
-      <InputSendMessage receiverId={receiverId} handleAddMessage={handleAddMessage} scrollToBottom={scrollToBottom} sendMessage={sendMessage} />
+      {!readOnly && (
+        <InputSendMessage receiverId={receiverId} handleAddMessage={handleAddMessage} scrollToBottom={scrollToBottom} sendMessage={sendMessage} />
+      )}
     </div>
   )
 }

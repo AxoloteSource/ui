@@ -7,10 +7,10 @@ export declare const useDataTableFilter: <Values>(props: IDataTableFilterProps<V
     search: string;
     dataTableProps: Record<string, unknown> | {
         page: number;
-        recordsPerPage: {};
-        totalRecords: {};
+        recordsPerPage: number;
+        totalRecords: number;
         onPageChange: (newPage: number) => void;
-        records: {};
+        records: any[];
         columns: ({
             render?: ((record: Record<string, unknown>, index: number) => React.ReactNode) | undefined;
             sortable: boolean;
