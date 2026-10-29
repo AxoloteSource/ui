@@ -1,5 +1,5 @@
-import { screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { screen, waitFor } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
 import { renderWithProviders } from '../../../test/utils'
 import MenuV2 from '../MenuV2'
 import type { IMenuItem } from '../../../interfaces/models/MenuItem/IMenuItem'
@@ -44,5 +44,21 @@ describe('MenuV2', () => {
   it('renders nothing without items', () => {
     const { container } = renderWithProviders(<MenuV2 menu={{ items: [] } as unknown as IMenuShow} />)
     expect(container.querySelector('ul')).toBeNull()
+  })
+
+  it('resolves icons outside the static registry and shows a visible fallback for unknown ones', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+    const iconMenu = {
+      items: [
+        item({ id: 'dynamic', name: 'Inicio', icon: 'House', path: '/' }),
+        item({ id: 'unknown', name: 'Roto', icon: 'DefinitelyNotAnIcon', path: '/roto' })
+      ]
+    } as IMenuShow
+
+    const { container } = renderWithProviders(<MenuV2 menu={iconMenu} />)
+
+    await waitFor(() => expect(container.querySelector('svg.lucide-house')).toBeTruthy())
+    expect(container.querySelector('svg.lucide-circle-help')).toBeTruthy()
+    warn.mockRestore()
   })
 })
