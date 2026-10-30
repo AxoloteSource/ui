@@ -1,8 +1,7 @@
 import { IMenuShow } from '../../interfaces/models/Menu/IMenuShow'
 import { IMenuItem } from '../../interfaces/models/MenuItem/IMenuItem'
 import { useAxoloteUI } from '../../contexts/AxoloteUIProvider'
-import { MenuV2Header } from './MenuV2Header'
-import { MenuV2Item } from './MenuV2Item'
+import { MenuV2Items } from './MenuV2Items'
 
 interface MenuV2Props {
   menu?: IMenuShow
@@ -16,18 +15,15 @@ export const MenuV2 = ({ menu: menuProp, editMode = false, onEdit, onDelete, onT
   const { menu: contextMenu } = useAxoloteUI()
   const menu = menuProp ?? contextMenu
 
-  const getItemComponent = (item: IMenuItem) =>
-    item.type === 'header' || (item.children?.length ?? 0) > 0 ? (
-      <MenuV2Header key={item.id} item={item} editMode={editMode} onEdit={onEdit} onDelete={onDelete} onToggleRole={onToggleRole} />
-    ) : (
-      <MenuV2Item key={item.id} item={item} editMode={editMode} onEdit={onEdit} onDelete={onDelete} onToggleRole={onToggleRole} />
-    )
-
   if (!menu?.items?.length) {
     return null
   }
 
-  return <ul>{menu.items.map(getItemComponent)}</ul>
+  return (
+    <ul>
+      <MenuV2Items items={menu.items} editMode={editMode} onEdit={onEdit} onDelete={onDelete} onToggleRole={onToggleRole} />
+    </ul>
+  )
 }
 
 export default MenuV2

@@ -1,4 +1,4 @@
-export type MenuItemType = 'header' | 'link';
+export type MenuItemType = 'header' | 'link' | 'section';
 export interface IMenuItem {
     id: string;
     menu_id: string;
