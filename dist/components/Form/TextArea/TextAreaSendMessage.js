@@ -1,36 +1,44 @@
-import { jsxs as p, Fragment as f, jsx as a } from "react/jsx-runtime";
-const b = (d) => {
+import { jsxs as c, Fragment as b, jsx as a } from "react/jsx-runtime";
+const K = (m) => {
   const {
-    inputKeyUpCallback: s,
-    IconComponent: n,
-    value: c,
-    name: i,
-    placeholder: u,
-    wrapperClassName: l,
-    inputCallback: r,
-    disabled: m = !1,
-    inputClassName: t,
-    error: o
-  } = d;
-  return /* @__PURE__ */ p(f, { children: [
-    /* @__PURE__ */ p("div", { className: `${l || "flex items-center border p-2 rounded"}`, children: [
+    inputKeyUpCallback: n,
+    inputKeyDownCallback: l,
+    inputSelectCallback: s,
+    IconComponent: t,
+    value: u,
+    name: C,
+    placeholder: f,
+    wrapperClassName: r,
+    startAdornment: o,
+    inputRef: x,
+    inputCallback: d,
+    disabled: h = !1,
+    inputClassName: i,
+    error: p
+  } = m;
+  return /* @__PURE__ */ c(b, { children: [
+    /* @__PURE__ */ c("div", { className: `${r || "flex items-center border p-2 rounded"}`, children: [
+      o && /* @__PURE__ */ a("div", { className: "mr-2 flex shrink-0 items-center", children: o }),
       /* @__PURE__ */ a(
         "textarea",
         {
-          value: c,
-          name: i,
-          disabled: m,
-          placeholder: u,
-          onKeyUp: s ? (e) => s(e) : void 0,
-          onChange: r ? (e) => r(e) : void 0,
-          className: `flex-1 outline-none resize-none ${t || ""}`
+          ref: x,
+          value: u,
+          name: C,
+          disabled: h,
+          placeholder: f,
+          onKeyUp: n ? (e) => n(e) : void 0,
+          onKeyDown: l ? (e) => l(e) : void 0,
+          onSelect: s ? (e) => s(e) : void 0,
+          onChange: d ? (e) => d(e) : void 0,
+          className: `flex-1 outline-none resize-none ${i || ""}`
         }
       ),
-      n && /* @__PURE__ */ a(n, {})
+      t && /* @__PURE__ */ a(t, {})
     ] }),
-    o && o.map((e, C) => /* @__PURE__ */ a("p", { className: "text-red-500", children: e }, C))
+    p && p.map((e, v) => /* @__PURE__ */ a("p", { className: "text-red-500", children: e }, v))
   ] });
 };
 export {
-  b as TextAreaSendMessage
+  K as TextAreaSendMessage
 };

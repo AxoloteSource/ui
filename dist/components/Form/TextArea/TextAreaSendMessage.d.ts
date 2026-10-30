@@ -7,8 +7,12 @@ interface ITextAreaChatProps<T> {
     value?: string;
     wrapperClassName?: string;
     IconComponent?: React.ComponentType;
+    startAdornment?: React.ReactNode;
+    inputRef?: React.RefObject<HTMLTextAreaElement | null>;
     inputCallback?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     inputKeyUpCallback?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
+    inputKeyDownCallback?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
+    inputSelectCallback?: (e: React.SyntheticEvent<HTMLTextAreaElement>) => void;
     error?: string[];
 }
 export declare const TextAreaSendMessage: <T extends object>(props: ITextAreaChatProps<T>) => React.JSX.Element;
