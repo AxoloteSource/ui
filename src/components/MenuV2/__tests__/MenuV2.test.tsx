@@ -46,6 +46,14 @@ describe('MenuV2', () => {
     expect(container.querySelector('ul')).toBeNull()
   })
 
+  it('applies the menu size and falls back to md', () => {
+    const { container } = renderWithProviders(<MenuV2 menu={{ ...menu, size: 'sm' }} />)
+    expect(container.querySelector('ul')).toHaveAttribute('data-menu-size', 'sm')
+
+    const { container: fallbackContainer } = renderWithProviders(<MenuV2 menu={{ ...menu, size: undefined } as unknown as IMenuShow} />)
+    expect(fallbackContainer.querySelector('ul')).toHaveAttribute('data-menu-size', 'md')
+  })
+
   it('renders section labels with their children as visible siblings', () => {
     const sectionMenu = {
       items: [
@@ -108,6 +116,27 @@ describe('MenuV2', () => {
 
     expect(onToggleRole).toHaveBeenCalledWith(expect.objectContaining({ id: 's1' }))
     expect(container.querySelectorAll('button')).toHaveLength(2)
+  })
+
+  it('marks header and link icons with menu-icon so they follow the menu size', () => {
+    const iconMenu = {
+      size: 'sm',
+      items: [
+        item({
+          id: 'h1',
+          type: 'header',
+          name: 'Ajustes',
+          icon: 'Shield',
+          children: [item({ id: 'c1', name: 'Perfil', path: '/perfil', icon: 'User' })]
+        }),
+        item({ id: 'l1', name: 'Inicio', path: '/inicio', icon: 'House' })
+      ]
+    } as IMenuShow
+
+    const { container } = renderWithProviders(<MenuV2 menu={iconMenu} />)
+
+    expect(container.querySelector('button svg.menu-icon')).toBeTruthy()
+    expect(container.querySelectorAll('a svg.menu-icon')).toHaveLength(2)
   })
 
   it('resolves icons outside the static registry and shows a visible fallback for unknown ones', async () => {

@@ -352,14 +352,79 @@
     color: var(--primary);
   }
 
-  .sidebar .nav-item a div:first-child svg,
-  .sidebar .nav-item button div:first-child svg {
+  .sidebar .nav-item .menu-icon {
     @apply h-5 w-5 text-[var(--text)];
   }
 
-  .sidebar .nav-item a.active div:first-child svg,
-  .sidebar .nav-item button div:first-child svg {
+  .sidebar .nav-item a.active .menu-icon {
     @apply text-[var(--primary)];
+  }
+
+  /* Menu size variants. `md` intentionally inherits the base styles above. */
+  .sidebar [data-menu-size='sm'] .nav-item > button,
+  .sidebar [data-menu-size='sm'] .nav-item > a {
+    @apply mb-0.5 p-1.5 text-xs;
+  }
+
+  .sidebar [data-menu-size='sm'] .nav-item .menu-icon {
+    @apply h-4 w-4;
+  }
+
+  .sidebar [data-menu-size='sm'] .nav-item > button > span > span:last-child svg {
+    @apply h-4 w-4;
+  }
+
+  .sidebar [data-menu-size='sm'] > h2,
+  .sidebar [data-menu-size='sm'] .menu-section {
+    @apply mb-0.5 px-5 py-2 text-xs;
+  }
+
+  .sidebar [data-menu-size='sm'] ul.sub-menu li button,
+  .sidebar [data-menu-size='sm'] ul.sub-menu li a {
+    @apply px-7 py-1.5 text-xs;
+  }
+
+  .sidebar [data-menu-size='sm'] ul.sub-menu ul.sub-menu li button,
+  .sidebar [data-menu-size='sm'] ul.sub-menu ul.sub-menu li a {
+    padding-inline-start: 2.5rem;
+  }
+
+  .sidebar [data-menu-size='sm'] ul.sub-menu ul.sub-menu ul.sub-menu li button,
+  .sidebar [data-menu-size='sm'] ul.sub-menu ul.sub-menu ul.sub-menu li a {
+    padding-inline-start: 3.5rem;
+  }
+
+  .sidebar [data-menu-size='lg'] .nav-item > button,
+  .sidebar [data-menu-size='lg'] .nav-item > a {
+    @apply mb-1.5 p-3.5 text-lg;
+  }
+
+  .sidebar [data-menu-size='lg'] .nav-item .menu-icon {
+    @apply h-6 w-6;
+  }
+
+  .sidebar [data-menu-size='lg'] .nav-item > button > span > span:last-child svg {
+    @apply h-6 w-6;
+  }
+
+  .sidebar [data-menu-size='lg'] > h2,
+  .sidebar [data-menu-size='lg'] .menu-section {
+    @apply mb-1 px-7 py-4 text-lg;
+  }
+
+  .sidebar [data-menu-size='lg'] ul.sub-menu li button,
+  .sidebar [data-menu-size='lg'] ul.sub-menu li a {
+    @apply px-10 py-3.5 text-lg;
+  }
+
+  .sidebar [data-menu-size='lg'] ul.sub-menu ul.sub-menu li button,
+  .sidebar [data-menu-size='lg'] ul.sub-menu ul.sub-menu li a {
+    padding-inline-start: 4rem;
+  }
+
+  .sidebar [data-menu-size='lg'] ul.sub-menu ul.sub-menu ul.sub-menu li button,
+  .sidebar [data-menu-size='lg'] ul.sub-menu ul.sub-menu ul.sub-menu li a {
+    padding-inline-start: 5.5rem;
   }
 
   .main-container .main-content {
@@ -383,13 +448,12 @@
     @apply ltr:left-0 lg:ltr:-left-[260px] rtl:right-0 lg:rtl:-right-[260px];
   }
 
-  .horizontal .nav-item a div:first-child svg,
-  .horizontal .nav-item button div:first-child svg {
+  .horizontal .nav-item .menu-icon {
     @apply h-5 w-5 text-[var(--text)];
   }
 
-  .horizontal .dark .nav-item button div:first-child svg,
-  .dark.horizontal .nav-item button div:first-child svg {
+  .horizontal .dark .nav-item button .menu-icon,
+  .dark.horizontal .nav-item button .menu-icon {
     @apply text-white/50;
   }
 

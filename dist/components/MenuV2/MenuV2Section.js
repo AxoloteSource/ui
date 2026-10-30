@@ -1,14 +1,14 @@
-import { jsx as r, jsxs as f } from "react/jsx-runtime";
-import { useTranslation as u } from "react-i18next";
+import { jsx as r, jsxs as u } from "react/jsx-runtime";
+import { useTranslation as f } from "react-i18next";
 import { MenuV2Actions as x } from "./MenuV2Actions.js";
 const g = ({ item: n, editMode: e = !1, onEdit: a, onDelete: i, onToggleRole: c }) => {
-  const { t: s } = u(), l = e && n.has_role === !1, p = n.active === !1, o = () => {
+  const { t: s } = f(), l = e && n.has_role === !1, p = n.active === !1, o = () => {
     e && c?.(n);
   };
-  return /* @__PURE__ */ r("li", { className: "nav-item relative", children: /* @__PURE__ */ f(
+  return /* @__PURE__ */ r("li", { className: "nav-item relative", children: /* @__PURE__ */ u(
     "h2",
     {
-      className: `bg-background -mx-4 mb-1 flex items-center px-7 py-3 font-extrabold uppercase${e ? " cursor-pointer ltr:pr-20 rtl:pl-20" : ""}${l ? " bg-gray-500!" : ""}`,
+      className: `bg-background -mx-4 mb-1 flex items-center px-7 py-3 font-extrabold uppercase menu-section${e ? " cursor-pointer ltr:pr-20 rtl:pl-20" : ""}${l ? " bg-gray-500!" : ""}`,
       style: { opacity: 0.5 },
       title: s(n.name),
       role: e ? "button" : void 0,

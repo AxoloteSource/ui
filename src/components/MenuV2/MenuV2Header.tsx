@@ -33,7 +33,7 @@ export const MenuV2Header = ({ item, editMode = false, onEdit, onDelete, onToggl
   const children = item.children ?? []
   const containsActiveRoute = hasActiveDescendant(children, location.pathname)
   const [open, setOpen] = useState(containsActiveRoute)
-  const icon = resolveIcon(item.icon, 'group-hover:!text-primary shrink-0 ltr:mr-2')
+  const icon = resolveIcon(item.icon, 'menu-icon group-hover:!text-primary shrink-0 ltr:mr-2')
   const isMissing = editMode && item.has_role === false
   const isDisabled = item.active === false
   const isOpen = editMode ? true : open

@@ -28,7 +28,7 @@ export const MenuV2Section = ({ item, editMode = false, onEdit, onDelete, onTogg
   return (
     <li className="nav-item relative">
       <h2
-        className={`bg-background -mx-4 mb-1 flex items-center px-7 py-3 font-extrabold uppercase${editMode ? ' cursor-pointer ltr:pr-20 rtl:pl-20' : ''}${
+        className={`bg-background -mx-4 mb-1 flex items-center px-7 py-3 font-extrabold uppercase menu-section${editMode ? ' cursor-pointer ltr:pr-20 rtl:pl-20' : ''}${
           isMissing ? ' bg-gray-500!' : ''
         }`}
         style={{ opacity: 0.5 }}

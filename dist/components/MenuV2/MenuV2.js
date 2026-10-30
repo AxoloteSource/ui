@@ -1,11 +1,36 @@
-import { jsx as t } from "react/jsx-runtime";
-import { useAxoloteUI as i } from "../../contexts/AxoloteUIProvider.js";
-import { MenuV2Items as l } from "./MenuV2Items.js";
-const x = ({ menu: n, editMode: m = !1, onEdit: o, onDelete: r, onToggleRole: u }) => {
-  const { menu: s } = i(), e = n ?? s;
-  return e?.items?.length ? /* @__PURE__ */ t("ul", { children: /* @__PURE__ */ t(l, { items: e.items, editMode: m, onEdit: o, onDelete: r, onToggleRole: u }) }) : null;
+import { jsx as m } from "react/jsx-runtime";
+import { useAxoloteUI as c } from "../../contexts/AxoloteUIProvider.js";
+import { MenuV2Items as p } from "./MenuV2Items.js";
+import { SortableMenuV2 as x } from "./sortable/SortableMenuV2.js";
+const M = ({
+  menu: f,
+  editMode: t = !1,
+  onEdit: s,
+  onDelete: r,
+  onToggleRole: n,
+  sortable: o = !1,
+  onReorder: u,
+  reorderLabel: a = "Reorder menu item"
+}) => {
+  const { menu: l } = c(), e = f ?? l;
+  if (!e?.items?.length)
+    return null;
+  const i = e.size ?? "md";
+  return o && t && u ? /* @__PURE__ */ m(
+    x,
+    {
+      items: e.items,
+      editMode: t,
+      size: i,
+      reorderLabel: a,
+      onReorder: u,
+      onEdit: s,
+      onDelete: r,
+      onToggleRole: n
+    }
+  ) : /* @__PURE__ */ m("ul", { "data-menu-size": i, children: /* @__PURE__ */ m(p, { items: e.items, editMode: t, onEdit: s, onDelete: r, onToggleRole: n }) });
 };
 export {
-  x as MenuV2,
-  x as default
+  M as MenuV2,
+  M as default
 };

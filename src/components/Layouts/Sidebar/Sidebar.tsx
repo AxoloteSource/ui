@@ -6,8 +6,9 @@ import { useSidebar } from './useSidebar'
 
 const Sidebar = () => {
   const { semidark, toggleSidebar, t } = useSidebar()
-  const { logo, logoDark, brandName } = useAxoloteUI()
+  const { logo, logoDark, brandName, menu } = useAxoloteUI()
   const brand = brandName ?? t('brand_name')
+  const menuSize = menu?.size ?? 'md'
 
   return (
     <div className={semidark ? 'dark' : ''}>
@@ -47,7 +48,7 @@ const Sidebar = () => {
             </button>
           </div>
           <PerfectScrollbar className="relative h-[calc(100vh-80px)]">
-            <ul className="relative space-y-0.5 p-4 py-0 font-semibold">
+            <ul className="relative space-y-0.5 p-4 py-0 font-semibold" data-menu-size={menuSize}>
               <h2 className="bg-background -mx-4 mb-1 flex items-center px-7 py-3 font-extrabold uppercase" style={{ opacity: 0.5 }}>
                 <svg
                   className="hidden h-5 w-4 flex-none"

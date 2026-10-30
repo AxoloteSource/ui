@@ -14,7 +14,7 @@ interface IMenuV2ItemProps {
 
 export const MenuV2Item = ({ item, editMode = false, onEdit, onDelete, onToggleRole }: IMenuV2ItemProps) => {
   const { t } = useTranslation()
-  const icon = resolveIcon(item.icon, 'group-hover:!text-primary shrink-0 ltr:mr-2')
+  const icon = resolveIcon(item.icon, 'menu-icon group-hover:!text-primary shrink-0 ltr:mr-2')
   const isMissing = editMode && item.has_role === false
   const isDisabled = item.active === false
 

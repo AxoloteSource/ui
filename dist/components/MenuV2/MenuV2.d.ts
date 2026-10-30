@@ -6,6 +6,9 @@ interface MenuV2Props {
     onEdit?: (item: IMenuItem) => void;
     onDelete?: (id: string) => void;
     onToggleRole?: (item: IMenuItem) => void;
+    sortable?: boolean;
+    onReorder?: (items: IMenuItem[]) => void;
+    reorderLabel?: string;
 }
-export declare const MenuV2: ({ menu: menuProp, editMode, onEdit, onDelete, onToggleRole }: MenuV2Props) => import("react").JSX.Element | null;
+export declare const MenuV2: ({ menu: menuProp, editMode, onEdit, onDelete, onToggleRole, sortable, onReorder, reorderLabel }: MenuV2Props) => import("react").JSX.Element | null;
 export default MenuV2;
